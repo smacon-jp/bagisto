@@ -23,7 +23,7 @@ class CreateGiftCardPaymentsTable extends Migration
             $table->decimal('amount', 10, 2);
             $table->string('currency', 3);
             $table->string('status');
-            $table->json('payment_data');
+            $table->text('payment_data');
             $table->string('payment_type');
             $table->timestamps();
 
