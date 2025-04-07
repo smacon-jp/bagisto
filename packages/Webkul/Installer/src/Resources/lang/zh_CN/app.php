@@ -140,6 +140,7 @@ return [
                 'ARS' => '阿根廷比索',
                 'AUD' => '澳大利亚元',
                 'BDT' => '孟加拉塔卡',
+                'BHD' => '巴林第纳尔',
                 'BRL' => '巴西雷亚尔',
                 'CAD' => '加拿大元',
                 'CHF' => '瑞士法郎',
@@ -205,6 +206,7 @@ return [
             'locales' => [
                 'ar'    => '阿拉伯語',
                 'bn'    => '孟加拉語',
+                'ca'    => '加拿大',
                 'de'    => '德語',
                 'en'    => '英語',
                 'es'    => '西班牙語',
@@ -634,6 +636,7 @@ return [
                 'australian-dollar'           => '澳大利亚元 (AUD)',
                 'bagisto'                     => 'Bagisto',
                 'bangladeshi-taka'            => '孟加拉塔卡 (BDT)',
+                'bahraini-dinar'              => '巴林第纳尔 (BHD)',
                 'brazilian-real'              => '巴西雷亚尔 (BRL)',
                 'british-pound-sterling'      => '英镑 (GBP)',
                 'canadian-dollar'             => '加拿大元 (CAD)',

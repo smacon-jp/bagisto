@@ -140,6 +140,7 @@ return [
                 'ARS' => 'פזו ארגנטינאי',
                 'AUD' => 'דולר אוסטרלי',
                 'BDT' => 'טאקה בנגלדשי',
+                'BHD' => 'דינר בחרייני',
                 'BRL' => 'ריאל ברזילאי',
                 'CAD' => 'דולר קנדי',
                 'CHF' => 'פרנק שוויצרי',
@@ -205,6 +206,7 @@ return [
             'locales' => [
                 'ar'    => 'ערבית',
                 'bn'    => 'בנגלי',
+                'ca'    => 'קנדה',
                 'de'    => 'גרמנית',
                 'en'    => 'אנגלית',
                 'es'    => 'ספרדית',
@@ -634,6 +636,7 @@ return [
                 'australian-dollar'           => 'דולר אוסטרלי (AUD)',
                 'bagisto'                     => 'Bagisto',
                 'bangladeshi-taka'            => 'טאקה בנגלדשי (BDT)',
+                'bahraini-dinar'              => 'דינר בחרייני (BHD)',
                 'brazilian-real'              => 'ריאל ברזילאי (BRL)',
                 'british-pound-sterling'      => 'לירה שטרלינג בריטית (GBP)',
                 'canadian-dollar'             => 'דולר קנדי (CAD)',

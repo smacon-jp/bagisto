@@ -190,6 +190,11 @@ return [
                 'title'                   => 'ایجاد سفارش برای :name',
 
                 'types' => [
+                    'simple' => [
+                        'none'         => 'هیچ',
+                        'total-amount' => 'مجموع مبلغ',
+                    ],
+
                     'configurable' => [
                         'select-options' => 'لطفاً یک گزینه را انتخاب کنید',
                     ],
@@ -205,6 +210,11 @@ return [
 
                     'downloadable' => [
                         'title' => 'لینک‌ها',
+                    ],
+
+                    'virtual' => [
+                        'none'         => 'هیچ',
+                        'total-amount' => 'مجموع مبلغ',
                     ],
                 ],
 
@@ -723,6 +733,38 @@ return [
                 ],
             ],
         ],
+
+        'booking' => [
+            'index' => [
+                'datagrid' => [
+                    'created-date' => 'تاریخ ایجاد',
+                    'from'         => 'از',
+                    'id'           => 'شناسه',
+                    'order-id'     => 'شناسه سفارش',
+                    'qty'          => 'تعداد',
+                    'to'           => 'تا',
+                    'view'         => 'مشاهده',
+                ],
+
+                'title'    => 'رزروها',
+            ],
+
+            'calendar' => [
+                'booking-date'     => 'تاریخ رزرو',
+                'booking-details'  => 'جزئیات رزرو',
+                'canceled'         => 'لغو شده',
+                'closed'           => 'بسته شده',
+                'done'             => 'انجام شده',
+                'order-id'         => 'شناسه سفارش',
+                'pending'          => 'در انتظار',
+                'price'            => 'قیمت',
+                'status'           => 'وضعیت',
+                'time-slot'        => 'بازه زمانی:',
+                'view-details'     => 'مشاهده جزئیات',
+            ],
+
+            'title' => 'محصولات رزرو',
+        ],
     ],
 
     'catalog' => [
@@ -858,6 +900,93 @@ return [
                 ],
 
                 'types' => [
+                    'simple' => [
+                        'customizable-options' => [
+                            'add-btn'           => 'افزودن گزینه',
+                            'empty-info'        => 'برای ایجاد گزینه‌های سفارشی‌سازی به سرعت.',
+                            'empty-title'       => 'افزودن گزینه',
+                            'info'              => 'این محصول ساده را سفارشی می‌کند.',
+                            'title'             => 'آیتم قابل سفارشی‌سازی',
+
+                            'update-create' => [
+                                'is-required'               => 'الزامی است',
+                                'max-characters'            => 'حداکثر کاراکتر',
+                                'name'                      => 'عنوان',
+                                'no'                        => 'خیر',
+                                'price'                     => 'قیمت',
+                                'save-btn'                  => 'ذخیره',
+                                'supported-file-extensions' => 'پسوند فایل‌های پشتیبانی‌شده',
+                                'title'                     => 'گزینه',
+                                'type'                      => 'نوع',
+                                'yes'                       => 'بله',
+                            ],
+
+                            'option' => [
+                                'add-btn'     => 'افزودن گزینه',
+                                'delete'      => 'حذف',
+                                'delete-btn'  => 'حذف',
+                                'edit-btn'    => 'ویرایش',
+                                'empty-info'  => 'برای ایجاد ترکیب‌های مختلف محصول به سرعت.',
+                                'empty-title' => 'افزودن گزینه',
+
+                                'types' => [
+                                    'text' => [
+                                        'title' => 'متن',
+                                    ],
+
+                                    'textarea' => [
+                                        'title' => 'منطقه متن',
+                                    ],
+
+                                    'checkbox' => [
+                                        'title' => 'چک‌باکس',
+                                    ],
+
+                                    'radio' => [
+                                        'title' => 'رادیو',
+                                    ],
+
+                                    'select' => [
+                                        'title' => 'انتخاب',
+                                    ],
+
+                                    'multiselect' => [
+                                        'title' => 'چند انتخابی',
+                                    ],
+
+                                    'date' => [
+                                        'title' => 'تاریخ',
+                                    ],
+
+                                    'datetime' => [
+                                        'title' => 'تاریخ و زمان',
+                                    ],
+
+                                    'time' => [
+                                        'title' => 'زمان',
+                                    ],
+
+                                    'file' => [
+                                        'title' => 'فایل',
+                                    ],
+                                ],
+
+                                'items' => [
+                                    'update-create' => [
+                                        'label'    => 'برچسب',
+                                        'price'    => 'قیمت',
+                                        'save-btn' => 'ذخیره',
+                                        'title'    => 'گزینه',
+                                    ],
+                                ],
+                            ],
+
+                            'validations' => [
+                                'associated-product' => 'محصول قبلاً با یک محصول پیکربندی‌شده، گروهی یا بسته‌ای مرتبط است.',
+                            ],
+                        ],
+                    ],
+
                     'configurable' => [
                         'add-btn'           => 'افزودن نسخه',
                         'delete-btn'        => 'حذف',
@@ -985,6 +1114,180 @@ return [
                                     'title' => 'انتخاب',
                                 ],
                             ],
+                        ],
+                    ],
+
+                    'booking' => [
+                        'available-from' => 'در دسترس از',
+                        'available-to'   => 'در دسترس تا',
+                        'location'       => 'موقعیت',
+                        'qty'            => 'تعداد',
+                        'title'          => 'نوع رزرو',
+
+                        'available-every-week' => [
+                            'no'    => 'خیر',
+                            'title' => 'در دسترس هر هفته',
+                            'yes'   => 'بله',
+                        ],
+
+                        'appointment' => [
+                            'break-duration' => 'مدت زمان استراحت بین اسلات‌ها (دقیقه)',
+                            'slot-duration'  => 'مدت زمان اسلات (دقیقه)',
+
+                            'same-slot-for-all-days' => [
+                                'no'    => 'خیر',
+                                'title' => 'همان اسلات برای همه روزها',
+                                'yes'   => 'بله',
+                            ],
+                        ],
+
+                        'default' => [
+                            'add'              => 'افزودن',
+                            'break-duration'   => 'مدت زمان استراحت بین اسلات‌ها (دقیقه)',
+                            'close'            => 'بستن',
+                            'description'      => 'اطلاعات رزرو',
+                            'description-info' => 'مدت زمان بر اساس اسلات‌ها ایجاد و نمایش داده خواهد شد. این مدت زمان در تمام اسلات‌ها منحصر به فرد خواهد بود و در فروشگاه قابل مشاهده خواهد بود.',
+                            'edit'             => 'ویرایش',
+                            'many'             => 'چندین رزرو برای یک روز',
+                            'one'              => 'یک رزرو برای چندین روز',
+                            'open'             => 'باز کردن',
+                            'slot-add'         => 'افزودن اسلات‌ها',
+                            'slot-duration'    => 'مدت زمان اسلات (دقیقه)',
+                            'slot-title'       => 'مدت زمان اسلات‌ها',
+                            'title'            => 'پیش‌فرض',
+                            'unavailable'      => 'غیر قابل دسترس',
+
+                            'modal' => [
+                                'slot' => [
+                                    'add-title'  => 'افزودن اسلات‌ها',
+                                    'close'      => 'بستن',
+                                    'day'        => 'روز',
+                                    'edit-title' => 'ویرایش اسلات‌ها',
+                                    'friday'     => 'جمعه',
+                                    'from'       => 'از',
+                                    'from-day'   => 'از روز',
+                                    'from-time'  => 'از زمان',
+                                    'monday'     => 'دوشنبه',
+                                    'open'       => 'باز کردن',
+                                    'saturday'   => 'شنبه',
+                                    'save'       => 'ذخیره',
+                                    'select'     => 'انتخاب',
+                                    'status'     => 'وضعیت',
+                                    'sunday'     => 'یکشنبه',
+                                    'thursday'   => 'پنجشنبه',
+                                    'to'         => 'تا',
+                                    'to-day'     => 'تا روز',
+                                    'to-time'    => 'تا زمان',
+                                    'tuesday'    => 'سه‌شنبه',
+                                    'wednesday'  => 'چهارشنبه',
+                                    'week'       => ':day',
+                                ],
+                            ],
+                        ],
+
+                        'event' => [
+                            'add'                => 'افزودن بلیط‌ها',
+                            'delete'             => 'حذف',
+                            'description'        => 'توضیحات',
+                            'description-info'   => 'بلیطی موجود نیست.',
+                            'edit'               => 'ویرایش',
+                            'name'               => 'نام',
+                            'price'              => 'قیمت',
+                            'qty'                => 'تعداد',
+                            'special-price'      => 'قیمت ویژه',
+                            'special-price-from' => 'قیمت ویژه از',
+                            'special-price-to'   => 'قیمت ویژه تا',
+                            'title'              => 'بلیط‌ها',
+                            'valid-from'         => 'معتبر از',
+                            'valid-until'        => 'معتبر تا',
+
+                            'modal'              => [
+                                'edit' => 'ویرایش بلیط‌ها',
+                                'save' => 'ذخیره',
+                            ],
+                        ],
+
+                        'empty-info' => [
+                            'tickets' => [
+                                'add' => 'افزودن بلیط‌ها',
+                            ],
+
+                            'slots'   => [
+                                'add'         => 'افزودن اسلات‌ها',
+                                'description' => 'اسلات‌های موجود با مدت زمان.',
+                            ],
+                        ],
+
+                        'rental' => [
+                            'daily'        => 'بر اساس روزانه',
+                            'daily-hourly' => 'هر دو (روزانه و ساعتی)',
+                            'daily-price'  => 'قیمت روزانه',
+                            'hourly'       => 'بر اساس ساعتی',
+                            'hourly-price' => 'قیمت ساعتی',
+                            'title'        => 'نوع اجاره',
+
+                            'same-slot-for-all-days' => [
+                                'no'    => 'خیر',
+                                'title' => 'همان اسلات برای همه روزها',
+                                'yes'   => 'بله',
+                            ],
+                        ],
+
+                        'slots' => [
+                            'add'              => 'افزودن اسلات‌ها',
+                            'description-info' => 'مدت زمان بر اساس اسلات‌ها ایجاد و نمایش داده خواهد شد. این مدت زمان در تمام اسلات‌ها منحصر به فرد خواهد بود و در فروشگاه قابل مشاهده خواهد بود.',
+                            'save'             => 'ذخیره',
+                            'title'            => 'مدت زمان اسلات‌ها',
+                            'unavailable'      => 'غیر قابل دسترس',
+
+                            'action'           => [
+                                'add' => 'افزودن',
+                            ],
+
+                            'modal'            => [
+                                'slot' => [
+                                    'friday'     => 'جمعه',
+                                    'from'       => 'از',
+                                    'monday'     => 'دوشنبه',
+                                    'saturday'   => 'شنبه',
+                                    'sunday'     => 'یکشنبه',
+                                    'thursday'   => 'پنجشنبه',
+                                    'to'         => 'تا',
+                                    'tuesday'    => 'سه‌شنبه',
+                                    'wednesday'  => 'چهارشنبه',
+                                ],
+                            ],
+                        ],
+
+                        'table' => [
+                            'break-duration'            => 'مدت زمان استراحت بین اسلات‌ها (دقیقه)',
+                            'guest-capacity'            => 'ظرفیت مهمان',
+                            'guest-limit'               => 'محدودیت مهمان در هر میز',
+                            'prevent-scheduling-before' => 'جلوگیری از برنامه‌ریزی قبل از',
+                            'slot-duration'             => 'مدت زمان اسلات (دقیقه)',
+
+                            'charged-per' => [
+                                'guest'  => 'مهمان',
+                                'table'  => 'میز',
+                                'title'  => 'شارژ بر اساس',
+                            ],
+
+                            'same-slot-for-all-days' => [
+                                'no'    => 'خیر',
+                                'title' => 'همان اسلات برای همه روزها',
+                                'yes'   => 'بله',
+                            ],
+                        ],
+
+                        'type' => [
+                            'appointment' => 'رزرو وقت ملاقات',
+                            'default'     => 'رزرو پیش‌فرض',
+                            'event'       => 'رزرو رویداد',
+                            'many'        => 'چندین',
+                            'one'         => 'یک',
+                            'rental'      => 'رزرو اجاره',
+                            'table'       => 'رزرو میز',
+                            'title'       => 'نوع',
                         ],
                     ],
 
@@ -1665,6 +1968,46 @@ return [
                     'id'     => 'شناسه',
                     'name'   => 'نام',
                 ],
+            ],
+        ],
+
+        'gdpr' => [
+            'index' => [
+                'title' => 'درخواست GDPR',
+
+                'datagrid' => [
+                    'completed'     => 'تکمیل شده',
+                    'created-at'    => 'ایجاد شده در',
+                    'customer-name' => 'نام مشتری',
+                    'declined'      => 'رد شده',
+                    'delete'        => 'حذف',
+                    'edit'          => 'ویرایش',
+                    'id'            => 'شناسه',
+                    'message'       => 'پیام',
+                    'pending'       => 'در انتظار',
+                    'processing'    => 'در حال پردازش',
+                    'revoked'       => 'ابطال شده',
+                    'status'        => 'وضعیت',
+                    'type'          => 'نوع',
+                ],
+
+                'modal' => [
+                    'completed'     => 'تکمیل شده',
+                    'declined'      => 'رد شده',
+                    'message'       => 'پیام',
+                    'pending'       => 'در انتظار',
+                    'processing'    => 'در حال پردازش',
+                    'revoked'       => 'ابطال شده',
+                    'save-btn'      => 'ذخیره',
+                    'status'        => 'وضعیت',
+                    'title'         => 'ویرایش درخواست داده GDPR',
+                    'type'          => 'نوع',
+                ],
+
+                'update-success'              => 'درخواست داده با موفقیت به‌روزرسانی شد و ایمیل به مشتری ارسال شد.',
+                'delete-success'              => 'درخواست داده با موفقیت حذف شد.',
+                'attribute-reason-error'      => 'امکان حذف وجود ندارد.',
+                'update-success-unsent-email' => 'درخواست داده با موفقیت به‌روزرسانی شد اما ایمیل به مشتری ارسال نشد.',
             ],
         ],
 
@@ -3158,6 +3501,7 @@ return [
                 'new'                           => 'جدید',
                 'no'                            => 'خیر',
                 'parent-id'                     => 'شناسه والد',
+                'parent-id-hint'                => 'شما می‌توانید چندین شناسه والد را به عنوان مقادیر جدا شده از کاما وارد کنید (مثل: 12,15,34)',
                 'category-id'                   => 'شناسه دسته‌بندی',
                 'preview'                       => 'پیش‌نمایش',
                 'product-carousel'              => 'کاروسل محصولات',
@@ -3319,6 +3663,7 @@ return [
 
         'view' => [
             'all-channels'  => 'همه کانال‌ها',
+            'back-btn'      => 'بازگشت',
             'day'           => 'روز',
             'end-date'      => 'تاریخ پایان',
             'export-csv'    => 'خروجی CSV',
@@ -3433,43 +3778,125 @@ return [
                     ],
 
                     'review-translation' => [
-                        'dolphin-phi'       => 'دلفین فای',
-                        'enabled'           => 'فعال شده',
-                        'gpt-3-5-turbo'     => 'OpenAI gpt-3.5-turbo',
-                        'llama2'            => 'لاما 2',
-                        'llama2-uncensored' => 'لاما 2 بدون سانسور',
-                        'llama2:13b'        => 'لاما 2 13B',
-                        'llama2:70b'        => 'لاما 2 70B',
-                        'llava'             => 'LLaVA',
-                        'mistral'           => 'میسترال',
-                        'model'             => 'مدل',
-                        'orca-mini'         => 'اورکا مینی',
-                        'phi'               => 'فای-2',
-                        'starling-lm'       => 'استارلینگ',
-                        'title'             => 'ترجمه نقد و بررسی',
-                        'title-info'        => 'گزینه‌ای برای مشتری یا بازدیدکننده فراهم کنید تا نقد و بررسی مشتری را به انگلیسی ترجمه کند. <br/> <br/> وقتی فعال شود، به بخش نقد و بررسی بروید و دکمه "ترجمه به انگلیسی" را پیدا خواهید کرد اگر نقد شما به غیر از انگلیسی باشد.',
-                        'vicuna'            => 'ویکونا',
+                        'deepseek-r1-8b'      => 'DeepSeek R1 (8b)',
+                        'enabled'             => 'فعال شده',
+                        'gemini-2-0-flash'    => 'Gemini 2.0 Flash',
+                        'gpt-4-turbo'         => 'OpenAI gpt-4 Turbo',
+                        'gpt-4o'              => 'OpenAI gpt-4o',
+                        'gpt-4o-mini'         => 'OpenAI gpt-4o mini',
+                        'llama-groq'          => 'Llama 3.3 (Groq)',
+                        'llama3-1-8b'         => 'Llama 3.1 (8B)',
+                        'llama3-2-1b'         => 'Llama 3.2 (1B)',
+                        'llama3-2-3b'         => 'Llama 3.2 (3B)',
+                        'llama3-8b'           => 'Llama 3 (8B)',
+                        'llava-7b'            => 'Llava (7b)',
+                        'mistral-7b'          => 'Mistral (7b)',
+                        'model'               => 'مدل',
+                        'orca-mini'           => 'Orca Mini',
+                        'phi3-5'              => 'Phi 3.5',
+                        'qwen2-5-0-5b'        => 'Qwen 2.5 (0.5b)',
+                        'qwen2-5-1-5b'        => 'Qwen 2.5 (1.5b)',
+                        'qwen2-5-14b'         => 'Qwen 2.5 (14b)',
+                        'qwen2-5-3b'          => 'Qwen 2.5 (3b)',
+                        'qwen2-5-7b'          => 'Qwen 2.5 (7b)',
+                        'starling-lm-7b'      => 'Starling-lm (7b)',
+                        'title'               => 'ترجمه بررسی',
+                        'title-info'          => 'به مشتری یا بازدیدکننده امکان ترجمه بررسی مشتری به انگلیسی را بدهید.<br/><br/>وقتی فعال شود، به بررسی بروید و دکمه "ترجمه به انگلیسی" را پیدا خواهید کرد اگر بررسی به غیر از انگلیسی باشد.',
+                        'vicuna-13b'          => 'Vicuna (13b)',
+                        'vicuna-7b'           => 'Vicuna (7b)',
                     ],
 
                     'checkout-message' => [
-                        'dolphin-phi'       => 'دلفین فای',
-                        'enabled'           => 'فعال شده',
-                        'gpt-3-5-turbo'     => 'OpenAI gpt-3.5-turbo',
-                        'llama2'            => 'لاما 2',
-                        'llama2-uncensored' => 'لاما 2 بدون سانسور',
-                        'llama2:13b'        => 'لاما 2 13B',
-                        'llama2:70b'        => 'لاما 2 70B',
-                        'llava'             => 'LLaVA',
-                        'mistral'           => 'میسترال',
-                        'model'             => 'مدل',
-                        'orca-mini'         => 'اورکا مینی',
-                        'phi'               => 'فای-2',
-                        'prompt'            => 'پیشنهاد',
-                        'starling-lm'       => 'استارلینگ',
-                        'title'             => 'پیام سفارشی تسویه حساب',
-                        'title-info'        => 'یک پیام سفارشی تسویه حساب برای مشتریان در صفحه تشکر ایجاد کنید و محتوا را بر اساس ترجیحات فردی بهینه کنید و تجربه کلی پس از خرید را بهبود بخشید.',
-                        'vicuna'            => 'ویکونا',
+                        'deepseek-r1-8b'      => 'DeepSeek R1 (8b)',
+                        'enabled'             => 'فعال شده',
+                        'gemini-2-0-flash'    => 'Gemini 2.0 Flash',
+                        'gpt-4-turbo'         => 'OpenAI gpt 4 Turbo',
+                        'gpt-4o'              => 'OpenAI gpt-4o',
+                        'gpt-4o-mini'         => 'OpenAI gpt-4o mini',
+                        'llama-groq'          => 'Llama 3.3 (Groq)',
+                        'llama3-1-8b'         => 'Llama 3.1 (8B)',
+                        'llama3-2-1b'         => 'Llama 3.2 (1B)',
+                        'llama3-2-3b'         => 'Llama 3.2 (3B)',
+                        'llama3-8b'           => 'Llama 3 (8B)',
+                        'llava-7b'            => 'Llava (7b)',
+                        'mistral-7b'          => 'Mistral (7b)',
+                        'model'               => 'مدل',
+                        'orca-mini'           => 'Orca Mini',
+                        'phi3-5'              => 'Phi 3.5',
+                        'prompt'              => 'پیشنهاد',
+                        'qwen2-5-0-5b'        => 'Qwen 2.5 (0.5b)',
+                        'qwen2-5-1-5b'        => 'Qwen 2.5 (1.5b)',
+                        'qwen2-5-14b'         => 'Qwen 2.5 (14b)',
+                        'qwen2-5-3b'          => 'Qwen 2.5 (3b)',
+                        'qwen2-5-7b'          => 'Qwen 2.5 (7b)',
+                        'starling-lm-7b'      => 'Starling-lm (7b)',
+                        'title'               => 'پیام شخصی‌سازی شده تسویه حساب',
+                        'title-info'          => 'ایجاد یک پیام شخصی‌سازی شده برای مشتریان در صفحه تشکر، با محتوایی که با ترجیحات فردی هماهنگ است و تجربه پس از خرید را بهبود می‌بخشد.',
+                        'vicuna'              => 'Vicuna',
+                        'vicuna-13b'          => 'Vicuna (13b)',
+                        'vicuna-7b'           => 'Vicuna (7b)',
                     ],
+                ],
+
+                'sitemap' => [
+                    'info'  => 'تنظیم گزینه‌های نقشه سایت.',
+                    'title' => 'نقشه سایت',
+
+                    'settings' => [
+                        'enabled' => 'فعال',
+                        'info'    => 'نقشه سایت را برای وب‌سایت خود فعال یا غیرفعال کنید تا به بهبود بهینه‌سازی موتورهای جستجو و افزایش تجربه کاربری کمک کند.',
+                        'title'   => 'تنظیمات',
+                    ],
+
+                    'file-limits' => [
+                        'info'             => 'تنظیم گزینه‌های محدودیت فایل.',
+                        'max-file-size'    => 'حداکثر اندازه فایل',
+                        'max-url-per-file' => 'حداکثر تعداد URL‌ها در هر فایل',
+                        'title'            => 'محدودیت‌های فایل',
+                    ],
+                ],
+            ],
+
+            'gdpr' => [
+                'title' => 'GDPR',
+                'info'  => 'تنظیمات انطباق با GDPR',
+
+                'settings' => [
+                    'title'   => 'تنظیمات انطباق با GDPR',
+                    'info'    => 'مدیریت تنظیمات انطباق با GDPR، از جمله سیاست حفظ حریم خصوصی. فعال یا غیرفعال کردن ویژگی‌های GDPR بر اساس نیاز.',
+                    'enabled' => 'فعال کردن GDPR',
+                ],
+
+                'agreement' => [
+                    'title'          => 'توافقنامه GDPR',
+                    'info'           => 'مدیریت رضایت مشتریان مطابق با مقررات GDPR. فعال کردن رضایت اجباری برای جمع‌آوری و پردازش داده‌ها.',
+                    'enable'         => 'فعال کردن رضایت مشتری',
+                    'checkbox-label' => 'برچسب چک‌باکس برای رضایت',
+                    'content'        => 'محتوای رضایت',
+                ],
+
+                'cookie' => [
+                    'bottom-left'  => 'پایین چپ',
+                    'bottom-right' => 'پایین راست',
+                    'center'       => 'مرکز',
+                    'description'  => 'توضیحات',
+                    'enable'       => 'فعال کردن اعلان کوکی‌ها',
+                    'identifier'   => 'شناسه بلوک استاتیک',
+                    'info'         => 'تنظیمات رضایت کوکی‌ها را برای اطلاع کاربران از جمع‌آوری داده‌ها و انطباق با سیاست‌های حفظ حریم خصوصی تنظیم کنید.',
+                    'position'     => 'موقعیت نمایش بلوک کوکی‌ها',
+                    'title'        => 'تنظیمات اعلان کوکی‌ها',
+                    'top-left'     => 'بالا چپ',
+                    'top-right'    => 'بالا راست',
+                ],
+
+                'cookie-consent' => [
+                    'title'                  => 'مدیریت تنظیمات کوکی‌های شما',
+                    'info'                   => 'کنترل کنید که چگونه داده‌های شما با انتخاب تنظیمات کوکی‌های مورد نظر استفاده می‌شود. مجوزها را برای انواع مختلف کوکی‌ها تنظیم کنید.',
+                    'strictly-necessary'     => 'کاملاً ضروری',
+                    'basic-interaction'      => 'تعامل و عملکرد پایه',
+                    'experience-enhancement' => 'بهبود تجربه',
+                    'measurement'            => 'اندازه‌گیری',
+                    'targeting-advertising'  => 'هدف‌گیری و تبلیغات',
                 ],
             ],
 
@@ -3568,13 +3995,14 @@ return [
                     ],
 
                     'review' => [
-                        'allow-customer-review' => 'اجازه بررسی مشتری',
-                        'allow-guest-review'    => 'اجازه بررسی مهمان',
-                        'display-review-count'  => 'نمایش تعداد بررسی برای رتبه بندی.',
-                        'display-star-count'    => 'نمایش تعداد ستاره در رتبه بندی.',
-                        'summary'               => 'خلاصه',
-                        'title'                 => 'بررسی',
-                        'title-info'            => 'ارزیابی یا ارزیابی چیزی، معمولاً شامل نظرات و بازخوردها است.',
+                        'allow-customer-review'   => 'اجازه بررسی مشتری',
+                        'allow-guest-review'      => 'اجازه بررسی مهمان',
+                        'censoring-reviewer-name' => 'سانسور نام بازبینی‌کننده',
+                        'display-review-count'    => 'نمایش تعداد بررسی برای رتبه بندی.',
+                        'display-star-count'      => 'نمایش تعداد ستاره در رتبه بندی.',
+                        'summary'                 => 'خلاصه',
+                        'title'                   => 'بررسی',
+                        'title-info'              => 'ارزیابی یا ارزیابی چیزی، معمولاً شامل نظرات و بازخوردها است.',
                     ],
 
                     'attribute' => [
@@ -3936,6 +4364,8 @@ return [
                     ],
 
                     'pdf-print-outs' => [
+                        'footer-text'      => 'متن پاورقی',
+                        'footer-text-info' => 'متنی که در پاورقی PDF ظاهر می‌شود را وارد کنید.',
                         'info'             => 'پیکربندی چاپ PDF برای نمایش شناسه فاکتور، شناسه سفارش در هدر و شامل لوگوی فاکتور.',
                         'invoice-id-info'  => 'پیکربندی نمایش شناسه فاکتور در هدر فاکتور.',
                         'invoice-id-title' => 'نمایش شناسه فاکتور در هدر',
@@ -4077,6 +4507,7 @@ return [
             'sidebar' => [
                 'attribute-families'       => 'خانواده‌های ویژگی',
                 'attributes'               => 'ویژگی‌ها',
+                'booking-product'          => 'رزروها',
                 'campaigns'                => 'کمپین‌ها',
                 'catalog'                  => 'کاتالوگ',
                 'categories'               => 'دسته‌بندی‌ها',
@@ -4093,6 +4524,7 @@ return [
                 'email-templates'          => 'قالب‌های ایمیل',
                 'events'                   => 'رویدادها',
                 'exchange-rates'           => 'نرخ‌های تبادل',
+                'gdpr-data-requests'       => 'درخواست‌های داده GDPR',
                 'groups'                   => 'گروه‌ها',
                 'imports'                  => 'واردات',
                 'inventory-sources'        => 'منابع موجودی',
@@ -4284,26 +4716,37 @@ return [
             'ai-btn-tile' => 'هوش مصنوعی',
 
             'ai-generation' => [
-                'apply'                  => 'اعمال کردن',
-                'generate'               => 'تولید کردن',
-                'generated-content'      => 'محتوای تولیدشده',
-                'generated-content-info' => 'ممکن است محتوای هوش مصنوعی گمراه‌کننده باشد. لطفاً محتوای تولیدشده را قبل از اعمال آن بررسی کنید.',
-                'generating'             => 'در حال تولید...',
-                'prompt'                 => 'پرسش',
-                'title'                  => 'یاری از هوش مصنوعی',
-                'model'                  => 'مدل',
-                'gpt-3-5-turbo'          => 'OpenAI GPT-3.5 Turbo',
-                'llama2'                 => 'Llama 2',
-                'mistral'                => 'Mistral',
-                'dolphin-phi'            => 'Dolphin Phi',
-                'phi'                    => 'Phi-2',
-                'starling-lm'            => 'Starling',
-                'llama2-uncensored'      => 'Llama 2 بدون سانسور',
-                'llama2:13b'             => 'Llama 2 13B',
-                'llama2:70b'             => 'Llama 2 70B',
-                'orca-mini'              => 'اورکا مینی',
-                'vicuna'                 => 'ویکونا',
-                'llava'                  => 'LLaVA',
+                'apply'                    => 'اعمال',
+                'deepseek-r1-8b'           => 'DeepSeek R1 (8b)',
+                'enabled'                  => 'فعال شده',
+                'gemini-2-0-flash'         => 'Gemini 2.0 Flash',
+                'generate'                 => 'تولید',
+                'generated-content'        => 'محتوای تولید شده',
+                'generated-content-info'   => 'محتوای هوش مصنوعی ممکن است گمراه‌کننده باشد. لطفاً قبل از اعمال، محتوای تولید شده را بررسی کنید.',
+                'generating'               => 'در حال تولید...',
+                'gpt-4-turbo'              => 'OpenAI gpt-4 Turbo',
+                'gpt-4o'                   => 'OpenAI gpt-4o',
+                'gpt-4o-mini'              => 'OpenAI gpt-4o mini',
+                'llama-groq'               => 'Llama 3.3 (Groq)',
+                'llama3-1-8b'              => 'Llama 3.1 (8B)',
+                'llama3-2-1b'              => 'Llama 3.2 (1B)',
+                'llama3-2-3b'              => 'Llama 3.2 (3B)',
+                'llama3-8b'                => 'Llama 3 (8B)',
+                'llava-7b'                 => 'Llava (7b)',
+                'mistral-7b'               => 'Mistral (7b)',
+                'model'                    => 'مدل',
+                'orca-mini'                => 'Orca Mini',
+                'phi3-5'                   => 'Phi 3.5',
+                'prompt'                   => 'پیشنهاد',
+                'qwen2-5-0-5b'             => 'Qwen 2.5 (0.5b)',
+                'qwen2-5-1-5b'             => 'Qwen 2.5 (1.5b)',
+                'qwen2-5-14b'              => 'Qwen 2.5 (14b)',
+                'qwen2-5-3b'               => 'Qwen 2.5 (3b)',
+                'qwen2-5-7b'               => 'Qwen 2.5 (7b)',
+                'starling-lm-7b'           => 'Starling-lm (7b)',
+                'title'                    => 'کمک هوش مصنوعی',
+                'vicuna-13b'               => 'Vicuna (13b)',
+                'vicuna-7b'                => 'Vicuna (7b)',
             ],
         ],
     ],
@@ -4333,6 +4776,7 @@ return [
         'email-templates'          => 'قالب‌های ایمیل',
         'events'                   => 'رویدادها',
         'exchange-rates'           => 'نرخ‌های ارزی',
+        'gdpr'                     => 'GDPR',
         'groups'                   => 'گروه‌ها',
         'import'                   => 'وارد كردن',
         'imports'                  => 'واردات',
@@ -4434,6 +4878,28 @@ return [
                 'description' => 'یک حساب کاربری جدید با موفقیت ایجاد شد. آنها اکنون می توانند با استفاده از آدرس ایمیل و اعتبار رمز عبور خود وارد سیستم شوند. پس از ورود به سیستم، به سرویس‌های مختلفی از جمله امکان بررسی سفارش‌های گذشته، مدیریت فهرست‌های خواسته‌ها و به‌روزرسانی اطلاعات حساب خود دسترسی خواهند داشت.',
                 'greeting'    => 'ما به مشتری جدید، :customer_name که به تازگی با ما ثبت نام کرده است، خوش آمد می گوییم!',
                 'subject'     => 'ثبت نام مشتری جدید',
+            ],
+
+            'gdpr' => [
+                'new-delete-request' => 'درخواست جدید برای حذف داده',
+                'new-update-request' => 'درخواست جدید برای به‌روزرسانی داده',
+
+                'new-request' => [
+                    'customer-name'  => 'نام مشتری : ',
+                    'delete-summary' => 'خلاصه درخواست حذف',
+                    'message'        => 'پیام : ',
+                    'request-status' => 'وضعیت درخواست : ',
+                    'request-type'   => 'نوع درخواست : ',
+                    'update-summary' => 'خلاصه درخواست به‌روزرسانی',
+                ],
+
+                'status-update' => [
+                    'subject'        => 'درخواست GDPR به‌روزرسانی شد',
+                    'summary'        => 'وضعیت درخواست GDPR به‌روزرسانی شد',
+                    'request-status' => 'وضعیت درخواست:',
+                    'request-type'   => 'نوع درخواست:',
+                    'message'        => 'پیام:',
+                ],
             ],
         ],
 

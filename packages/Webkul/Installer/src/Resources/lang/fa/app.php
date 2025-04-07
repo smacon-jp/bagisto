@@ -140,6 +140,7 @@ return [
                 'ARS' => 'پزوی آرژانتین',
                 'AUD' => 'دلار استرالیا',
                 'BDT' => 'تاکای بنگلادش',
+                'BHD' => 'دینار بحرین',
                 'BRL' => 'رئال برزیل',
                 'CAD' => 'دلار کانادا',
                 'CHF' => 'فرانک سوئیس',
@@ -205,6 +206,7 @@ return [
             'locales' => [
                 'ar'    => 'عربی',
                 'bn'    => 'بنگالی',
+                'ca'    => 'کانادا',
                 'de'    => 'آلمانی',
                 'en'    => 'انگلیسی',
                 'es'    => 'اسپانیایی',
@@ -634,6 +636,7 @@ return [
                 'australian-dollar'           => 'دلار استرالیا (AUD)',
                 'bagisto'                     => 'Bagisto',
                 'bangladeshi-taka'            => 'تاکای بنگلادش (BDT)',
+                'bahraini-dinar'              => 'دینار بحرین (BHD)',
                 'brazilian-real'              => 'رئال برزیل (BRL)',
                 'british-pound-sterling'      => 'پوند استرلینگ بریتانیا (GBP)',
                 'canadian-dollar'             => 'دلار کانادا (CAD)',

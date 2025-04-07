@@ -71,6 +71,7 @@ class Installer extends Command
     protected $locales = [
         'ar'    => 'Arabic',
         'bn'    => 'Bengali',
+        'ca'    => 'Catalan',
         'de'    => 'German',
         'en'    => 'English',
         'es'    => 'Spanish',
@@ -511,6 +512,8 @@ class Installer extends Command
             if (! in_array($key, $this->fillableEnvVariables)) {
                 continue;
             }
+
+            $value = trim($value, '"');
 
             $this->updateEnvVariable($key, $value, Str::startsWith($key, 'DB_'));
         }

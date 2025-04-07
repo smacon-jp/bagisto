@@ -50,6 +50,7 @@ return [
             'account-exists'              => 'هل لديك حساب بالفعل؟',
             'bagisto'                     => 'باغيستو',
             'button-title'                => 'التسجيل',
+            'click-here'                  => 'انقر هنا',
             'confirm-pass'                => 'تأكيد كلمة المرور',
             'email'                       => 'البريد الإلكتروني',
             'first-name'                  => 'الاسم الأول',
@@ -63,6 +64,7 @@ return [
             'success'                     => 'تم إنشاء الحساب بنجاح.',
             'success-verify'              => 'تم إنشاء الحساب بنجاح، تم إرسال رسالة بريد إلكتروني للتحقق.',
             'success-verify-email-unsent' => 'تم إنشاء الحساب بنجاح، ولكن رسالة التحقق لم تتم إرسالها.',
+            'terms-conditions'            => 'الشروط والأحكام',
             'verification-not-sent'       => 'خطأ! مشكلة في إرسال رسالة التحقق البريدية، يرجى المحاولة مرة أخرى لاحقًا.',
             'verification-sent'           => 'تم إرسال رسالة التحقق',
             'verified'                    => 'تم التحقق من حسابك، حاول تسجيل الدخول الآن.',
@@ -373,6 +375,92 @@ return [
                 'success'            => 'تمت إضافة العنصر بنجاح إلى قائمة الأماني',
                 'title'              => 'قائمة الأماني',
             ],
+
+            'gdpr' => [
+                'create-success'              => 'تم إنشاء الطلب بنجاح',
+                'revoked-successfully'        => 'تم إلغاء الطلب بنجاح',
+                'success-verify'              => 'نجاح! تم إرسال بريد التحقق الإلكتروني.',
+                'success-verify-email-unsent' => 'نجاح! لم يتم إرسال بريد التحقق الإلكتروني.',
+                'unable-to-sent'              => 'تعذر إرسال البريد الإلكتروني.',
+
+                'index'   => [
+                    'create-btn' => 'إنشاء طلب',
+                    'html'       => 'HTML',
+                    'pdf'        => 'PDF',
+                    'title'      => 'طلبات بيانات اللائحة العامة لحماية البيانات',
+
+                    'modal' => [
+                        'message' => 'رسالة',
+                        'save'    => 'حفظ',
+                        'title'   => 'إنشاء طلب جديد',
+
+                        'type'    => [
+                            'choose' => 'اختر',
+                            'delete' => 'حذف',
+                            'title'  => 'النوع',
+                            'update' => 'تحديث',
+                        ],
+                    ],
+
+                    'datagrid' => [
+                        'completed'  => 'مكتمل',
+                        'date'       => 'التاريخ',
+                        'declined'   => 'مرفوض',
+                        'delete'     => 'حذف',
+                        'id'         => 'معرّف',
+                        'message'    => 'رسالة',
+                        'pending'    => 'قيد الانتظار',
+                        'processing' => 'قيد المعالجة',
+                        'revoke-btn' => 'إلغاء',
+                        'revoked'    => 'ملغى',
+                        'status'     => 'الحالة',
+                        'type'       => 'النوع',
+                        'update'     => 'تحديث',
+                    ],
+                ],
+
+                'pdf' => [
+                    'title' => 'عرض المتجر الافتراضي',
+
+                    'account-info' => [
+                        'dob'          => 'تاريخ الميلاد',
+                        'email'        => 'البريد الإلكتروني',
+                        'first-name'   => 'الاسم الأول',
+                        'gender'       => 'الجنس',
+                        'last-name'    => 'اسم العائلة',
+                        'phone'        => 'الهاتف',
+                        'title'        => 'معلومات الحساب',
+                    ],
+
+                    'address-info' => [
+                        'address'    => 'العنوان',
+                        'address1'   => 'العنوان 1',
+                        'address2'   => 'العنوان 2',
+                        'city'       => 'المدينة',
+                        'company'    => 'الشركة',
+                        'country'    => 'الدولة',
+                        'first-name' => 'الاسم الأول',
+                        'last-name'  => 'اسم العائلة',
+                        'phone'      => 'الهاتف',
+                        'postcode'   => 'الرمز البريدي',
+                        'state'      => 'الولاية',
+                        'title'      => 'معلومات العنوان',
+                        'vat-id'     => 'معرف ضريبة القيمة المضافة',
+                    ],
+
+                    'order-info' => [
+                        'amount'       => 'المبلغ',
+                        'order-id'     => 'رقم الطلب',
+                        'product-name' => 'اسم المنتج',
+                        'qty'          => 'الكمية',
+                        'shipping'     => 'الشحن',
+                        'sku'          => 'رمز المنتج',
+                        'status'       => 'الحالة',
+                        'title'        => 'معلومات الطلب',
+                        'type'         => 'النوع',
+                    ],
+                ],
+            ],
         ],
     ],
 
@@ -445,6 +533,25 @@ return [
                 'subscribe-newsletter'   => 'اشترك في النشرة الإخبارية',
                 'subscribe-stay-touch'   => 'اشترك للبقاء على اتصال.',
                 'whats-new'              => 'ما الجديد',
+            ],
+
+            'cookie' => [
+                'index' => [
+                    'privacy-policy'           => 'سياسة الخصوصية',
+                    'reject'                   => 'رفض',
+                    'accept'                   => 'قبول',
+                    'learn-more-and-customize' => 'تعرف على المزيد وقم بالتخصيص',
+                ],
+
+                'consent' => [
+                    'your-cookie-consent-preferences'         => 'تفضيلات موافقتك على ملفات تعريف الارتباط',
+                    'save-and-continue'                       => 'حفظ ومتابعة',
+                    'strictly-necessary'                      => 'ضرورية للغاية',
+                    'basic-interactions'                      => 'التفاعلات والوظائف الأساسية',
+                    'experience-enhancement'                  => 'تحسين التجربة',
+                    'measurements'                            => 'القياس',
+                    'targeting-and-advertising'               => 'الاستهداف والإعلانات',
+                ],
             ],
         ],
 
@@ -568,6 +675,13 @@ return [
 
         'view' => [
             'type' => [
+                'simple' => [
+                    'customizable-options' => [
+                        'none'         => 'لا شيء',
+                        'total-amount' => 'المبلغ الإجمالي',
+                    ],
+                ],
+
                 'configurable' => [
                     'select-options'       => 'يرجى اختيار خيار',
                     'select-above-options' => 'يرجى اختيار الخيارات أعلاه',
@@ -585,6 +699,62 @@ return [
 
                 'grouped' => [
                     'name' => 'الاسم',
+                ],
+
+                'booking' => [
+                    'location'    => 'الموقع',
+                    'view-on-map' => 'عرض على الخريطة',
+
+                    'default' => [
+                        'slot-duration-in-minutes' => ':minutes دقائق',
+                        'slot-duration'            => 'مدة الفتحة',
+                    ],
+
+                    'appointment' => [
+                        'closed'                   => 'مغلق',
+                        'see-details'              => 'عرض التفاصيل',
+                        'slot-duration'            => 'مدة الفتحة',
+                        'slot-duration-in-minutes' => ':minutes دقائق',
+                        'today-availability'       => 'التوافر اليوم',
+                    ],
+
+                    'event' => [
+                        'book-your-ticket' => 'احجز تذكرتك',
+                        'title'            => 'الحدث في :',
+                    ],
+
+                    'rental'      => [
+                        'choose-rent-option' => 'اختر خيار الإيجار',
+                        'daily-basis'        => 'على أساس يومي',
+                        'from'               => 'من',
+                        'hourly-basis'       => 'على أساس الساعة',
+                        'rent-an-item'       => 'استئجار عنصر',
+                        'select-date'        => 'اختر التاريخ',
+                        'select-rent-time'   => 'اختر وقت الإيجار',
+                        'select-slot'        => 'اختر الفتحة',
+                        'select-time-slot'   => 'اختر الفتحة الزمنية',
+                        'slot'               => 'الفتحة',
+                        'no-slots-available' => 'لا توجد فتحات متاحة',
+                        'to'                 => 'إلى',
+                    ],
+
+                    'table'       => [
+                        'book-a-table'             => 'احجز طاولة',
+                        'closed'                   => 'مغلق',
+                        'slot-duration'            => 'مدة الفتحة',
+                        'slot-duration-in-minutes' => ':minutes دقائق',
+                        'slots-for-all-days'       => 'عرض لجميع الأيام',
+                        'special-notes'            => 'طلب خاص/ملاحظات',
+                        'today-availability'       => 'التوافر اليوم',
+                    ],
+
+                    'slots' => [
+                        'book-an-appointment' => 'احجز موعدًا',
+                        'date'                => 'التاريخ',
+                        'no-slots-available'  => 'لا توجد فتحات متاحة',
+                        'select-slot'         => 'اختر الفتحة',
+                        'title'               => 'الفتحة',
+                    ],
                 ],
             ],
 
@@ -630,6 +800,38 @@ return [
             'abstract' => [
                 'offers' => 'اشترِ :qty بسعر :price للوحدة ووفّر :discount',
             ],
+        ],
+
+        'booking' => [
+            'closed' => 'مغلق',
+
+            'cart'             => [
+                'booking-from' => 'الحجز من',
+                'booking-till' => 'الحجز حتى',
+                'daily'        => 'على أساس يومي',
+                'event-from'   => 'الحدث من',
+                'event-ticket' => 'تذكرة الحدث',
+                'event-till'   => 'الحدث حتى',
+                'hourly'       => 'على أساس الساعة',
+
+                'integrity'    => [
+                    'event'                  => [
+                        'expired' => 'لقد انتهت صلاحية هذا الحدث.',
+                    ],
+
+                    'missing_options'        => 'الخيارات مفقودة لهذا المنتج.',
+                    'inventory_warning'      => 'الكمية المطلوبة غير متوفرة، يرجى المحاولة مرة أخرى لاحقًا.',
+                    'select_hourly_duration' => 'اختر مدة الفتحة الزمنية بساعة واحدة.',
+                ],
+
+                'rent-from'    => 'الإيجار من',
+                'rent-till'    => 'الإيجار حتى',
+                'rent-type'    => 'نوع الإيجار',
+                'renting_type' => 'نوع الإيجار',
+                'special-note' => 'طلب خاص/ملاحظات',
+            ],
+
+            'per-ticket-price' => ':price لكل تذكرة',
         ],
     ],
 
@@ -873,8 +1075,11 @@ return [
         ],
 
         'index' => [
-            'offer'               => 'احصل على خصم يصل إلى 40٪ على طلبك الأول اشتر الآن',
-            'resend-verify-email' => 'إعادة إرسال رسالة التحقق من البريد الإلكتروني',
+            'categories-carousel' => 'سلاسل الفئات',
+            'image-carousel'      => 'سلاسل الصور',
+            'offer'               => 'احصل على خصم يصل إلى 40% على طلبك الأول، تسوق الآن',
+            'product-carousel'    => 'سلاسل المنتجات',
+            'resend-verify-email' => 'إعادة إرسال بريد التحقق',
             'verify-email'        => 'تحقق من حساب بريدك الإلكتروني',
         ],
 
@@ -883,7 +1088,9 @@ return [
 
     'partials' => [
         'pagination' => [
+            'next-page'          => 'الصفحة التالية',
             'pagination-showing' => 'عرض :firstItem إلى :lastItem من :total مقالات',
+            'prev-page'          => 'الصفحة السابقة',
         ],
     ],
 
@@ -919,6 +1126,7 @@ return [
     'layouts' => [
         'address'               => 'العنوان',
         'downloadable-products' => 'المنتجات القابلة للتنزيل',
+        'gdpr-request'          => 'طلبات GDPR',
         'my-account'            => 'حسابي',
         'orders'                => 'الطلبات',
         'profile'               => 'الملف الشخصي',
@@ -977,6 +1185,33 @@ return [
                 'greeting'    => 'مرحبًا في نشرتنا الإخبارية!',
                 'subject'     => 'أنت مشترك في نشرتنا الإخبارية',
                 'unsubscribe' => 'إلغاء الاشتراك',
+            ],
+
+            'gdpr' => [
+                'new-delete-request' => 'طلب جديد لحذف البيانات',
+                'new-update-request' => 'طلب جديد لتحديث البيانات',
+
+                'new-request' => [
+                    'delete-summary' => 'ملخص طلب الحذف',
+                    'message'        => 'رسالة : ',
+                    'request-status' => 'حالة الطلب : ',
+                    'request-type'   => 'نوع الطلب : ',
+                    'update-summary' => 'ملخص طلب التحديث',
+                ],
+
+                'status-update' => [
+                    'subject'        => 'تم تحديث طلب GDPR الخاص بك',
+                    'summary'        => 'تم تحديث حالة طلب GDPR الخاص بك',
+                    'request-status' => 'حالة الطلب:',
+                    'request-type'   => 'نوع الطلب:',
+                    'message'        => 'رسالة:',
+                ],
+            ],
+
+            'reminder' => [
+                'already-paid'    => 'إذا كنت قد قمت بالدفع بالفعل، يرجى تجاهل هذه الرسالة.',
+                'invoice-overdue' => 'هذه تذكير ودي بأن فاتورتك متأخرة. نرجو منك إجراء الدفع في أقرب وقت ممكن.',
+                'subject'         => 'تذكير بالفاتورة',
             ],
         ],
 

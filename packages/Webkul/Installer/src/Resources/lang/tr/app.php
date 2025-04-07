@@ -140,6 +140,7 @@ return [
                 'ARS' => 'Arjantin Pesosu',
                 'AUD' => 'Avustralya Doları',
                 'BDT' => 'Bangladeş Takası',
+                'BHD' => 'Bahreyn Dinarı',
                 'BRL' => 'Brezilya Reali',
                 'CAD' => 'Kanada Doları',
                 'CHF' => 'İsviçre Frangı',
@@ -205,6 +206,7 @@ return [
             'locales'    => [
                 'ar'    => 'Arapça',
                 'bn'    => 'Bengali',
+                'ca'    => 'Kanada',
                 'de'    => 'Almanca',
                 'en'    => 'İngilizce',
                 'es'    => 'İspanyolca',
@@ -634,6 +636,7 @@ return [
                 'australian-dollar'           => 'Avustralya Doları (AUD)',
                 'bagisto'                     => 'Bagisto',
                 'bangladeshi-taka'            => 'Bangladeş Takası (BDT)',
+                'bahraini-dinar'              => 'Bahreyn Dinarı (BHD)',
                 'brazilian-real'              => 'Brezilya Reali (BRL)',
                 'british-pound-sterling'      => 'İngiliz Sterlini (GBP)',
                 'canadian-dollar'             => 'Kanada Doları (CAD)',

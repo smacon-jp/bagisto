@@ -587,13 +587,17 @@
                             </x-admin::form.control-group>
 
                             <!-- Use to create configurable product -->
-                            <x-admin::form.control-group class="!mb-2 flex select-none items-center gap-2.5">
+                            <x-admin::form.control-group
+                                class="!mb-2 flex select-none items-center gap-2.5"
+                                ::class="{ 'opacity-70' : isConfigurableDisabled }"
+                            >
                                 <x-admin::form.control-group.control
                                     type="checkbox"
                                     id="is_configurable"
                                     name="is_configurable"
                                     value="1"
                                     for="is_configurable"
+                                    ::disabled="isConfigurableDisabled"
                                 />
 
                                 <label
@@ -684,14 +688,14 @@
                         @toggle="listenModal"
                         ref="addOptionsRow"
                     >
-                        <!-- Modal Header !-->
+                        <!-- Modal Header -->
                         <x-slot:header>
                             <p class="text-lg font-bold text-gray-800 dark:text-white">
                                 @lang('admin::app.catalog.attributes.create.add-option')
                             </p>
                         </x-slot>
 
-                        <!-- Modal Content !-->
+                        <!-- Modal Content -->
                         <x-slot:content>
                             <div
                                 class="grid"
@@ -749,7 +753,7 @@
                                 />
 
                                 <!-- Admin Input -->
-                                <x-admin::form.control-group class="mb-2.5 w-full">
+                                <x-admin::form.control-group class="!mb-2.5 w-full">
                                     <x-admin::form.control-group.label ::class="{ 'required' : ! isNullOptionChecked }">
                                         @lang('admin::app.catalog.attributes.create.admin')
                                     </x-admin::form.control-group.label>
@@ -767,7 +771,7 @@
 
                                 <!-- Locales Input -->
                                 @foreach ($locales as $locale)
-                                    <x-admin::form.control-group class="mb-2.5 w-full">
+                                    <x-admin::form.control-group class="!mb-2.5 w-full">
                                         <x-admin::form.control-group.label ::class="{ '{{core()->getDefaultLocaleCodeFromDefaultChannel() == $locale->code ? 'required' : ''}}' : ! isNullOptionChecked }">
                                             {{ $locale->name }} ({{ strtoupper($locale->code) }})
                                         </x-admin::form.control-group.label>
@@ -786,14 +790,14 @@
                             </div>
                         </x-slot>
 
-                        <!-- Modal Footer !-->
+                        <!-- Modal Footer -->
                         <x-slot:footer>
-                            <button
-                                type="submit"
+                            <!-- Save Button -->
+                            <x-admin::button
+                                button-type="button"
                                 class="primary-button"
-                            >
-                                @lang('admin::app.catalog.attributes.create.option.save-btn')
-                            </button>
+                                :title="trans('admin::app.catalog.attributes.create.option.save-btn')"
+                            />
                         </x-slot>
                     </x-admin::modal>
                 </form>
@@ -840,6 +844,11 @@
                             || this.attributeType == 'select' || this.attributeType == 'multiselect'
                             ? false : true;
                     },
+
+                    isConfigurableDisabled() {
+                        return this.attributeType == 'select' || this.attributeType == 'multiselect'
+                            ? false : true;
+                    }
                 },
 
                 methods: {

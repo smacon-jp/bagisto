@@ -190,6 +190,11 @@ return [
                 'title'                   => 'إنشاء طلب لـ :name',
 
                 'types' => [
+                    'simple' => [
+                        'none'         => 'لا شيء',
+                        'total-amount' => 'المبلغ الإجمالي',
+                    ],
+
                     'configurable' => [
                         'select-options' => 'يرجى تحديد خيار',
                     ],
@@ -205,6 +210,11 @@ return [
 
                     'downloadable' => [
                         'title' => 'الروابط',
+                    ],
+
+                    'virtual' => [
+                        'none'         => 'لا شيء',
+                        'total-amount' => 'المبلغ الإجمالي',
                     ],
                 ],
 
@@ -723,6 +733,38 @@ return [
                 ],
             ],
         ],
+
+        'booking' => [
+            'index' => [
+                'datagrid' => [
+                    'created-date' => 'تاريخ الإنشاء',
+                    'from'         => 'من',
+                    'id'           => 'المعرف',
+                    'order-id'     => 'رقم الطلب',
+                    'qty'          => 'الكمية',
+                    'to'           => 'إلى',
+                    'view'         => 'عرض',
+                ],
+
+                'title'    => 'الحجوزات',
+            ],
+
+            'calendar' => [
+                'booking-date'     => 'تاريخ الحجز',
+                'booking-details'  => 'تفاصيل الحجز',
+                'canceled'         => 'ملغى',
+                'closed'           => 'مغلق',
+                'done'             => 'تم',
+                'order-id'         => 'رقم الطلب',
+                'pending'          => 'قيد الانتظار',
+                'price'            => 'السعر',
+                'status'           => 'الحالة',
+                'time-slot'        => 'الفترة الزمنية:',
+                'view-details'     => 'عرض التفاصيل',
+            ],
+
+            'title' => 'منتجات الحجز',
+        ],
     ],
 
     'catalog' => [
@@ -858,6 +900,93 @@ return [
                 ],
 
                 'types' => [
+                    'simple' => [
+                        'customizable-options' => [
+                            'add-btn'           => 'إضافة خيار',
+                            'empty-info'        => 'لإنشاء خيارات قابلة للتخصيص بسهولة.',
+                            'empty-title'       => 'إضافة خيار',
+                            'info'              => 'سيقوم هذا بتخصيص المنتج البسيط.',
+                            'title'             => 'عنصر قابل للتخصيص',
+
+                            'update-create' => [
+                                'is-required'               => 'مطلوب',
+                                'max-characters'            => 'الحد الأقصى للأحرف',
+                                'name'                      => 'العنوان',
+                                'no'                        => 'لا',
+                                'price'                     => 'السعر',
+                                'save-btn'                  => 'حفظ',
+                                'supported-file-extensions' => 'الامتدادات المدعومة للملفات',
+                                'title'                     => 'خيار',
+                                'type'                      => 'النوع',
+                                'yes'                       => 'نعم',
+                            ],
+
+                            'option' => [
+                                'add-btn'     => 'إضافة خيار',
+                                'delete'      => 'حذف',
+                                'delete-btn'  => 'حذف',
+                                'edit-btn'    => 'تعديل',
+                                'empty-info'  => 'لإنشاء مجموعة متنوعة من المنتجات بسهولة.',
+                                'empty-title' => 'إضافة خيار',
+
+                                'types' => [
+                                    'text' => [
+                                        'title' => 'نص',
+                                    ],
+
+                                    'textarea' => [
+                                        'title' => 'منطقة نص',
+                                    ],
+
+                                    'checkbox' => [
+                                        'title' => 'مربع اختيار',
+                                    ],
+
+                                    'radio' => [
+                                        'title' => 'زر اختيار',
+                                    ],
+
+                                    'select' => [
+                                        'title' => 'قائمة اختيار',
+                                    ],
+
+                                    'multiselect' => [
+                                        'title' => 'قائمة متعددة',
+                                    ],
+
+                                    'date' => [
+                                        'title' => 'تاريخ',
+                                    ],
+
+                                    'datetime' => [
+                                        'title' => 'تاريخ ووقت',
+                                    ],
+
+                                    'time' => [
+                                        'title' => 'وقت',
+                                    ],
+
+                                    'file' => [
+                                        'title' => 'ملف',
+                                    ],
+                                ],
+
+                                'items' => [
+                                    'update-create' => [
+                                        'label'    => 'التسمية',
+                                        'price'    => 'السعر',
+                                        'save-btn' => 'حفظ',
+                                        'title'    => 'خيار',
+                                    ],
+                                ],
+                            ],
+
+                            'validations' => [
+                                'associated-product' => 'المنتج مرتبط بالفعل بمنتج قابل للتكوين أو مجموعة أو حزمة.',
+                            ],
+                        ],
+                    ],
+
                     'configurable' => [
                         'add-btn'           => 'إضافة متغير',
                         'delete-btn'        => 'حذف',
@@ -985,6 +1114,180 @@ return [
                                     'title' => 'اختيار',
                                 ],
                             ],
+                        ],
+                    ],
+
+                    'booking' => [
+                        'available-from' => 'متاح من',
+                        'available-to'   => 'متاح حتى',
+                        'location'       => 'الموقع',
+                        'qty'            => 'الكمية',
+                        'title'          => 'نوع الحجز',
+
+                        'available-every-week' => [
+                            'no'    => 'لا',
+                            'title' => 'متاح كل أسبوع',
+                            'yes'   => 'نعم',
+                        ],
+
+                        'appointment' => [
+                            'break-duration'         => 'مدة الاستراحة بين الفترات (بالدقائق)',
+                            'slot-duration'          => 'مدة الفترة (بالدقائق)',
+
+                            'same-slot-for-all-days' => [
+                                'no'    => 'لا',
+                                'title' => 'نفس الفترة لجميع الأيام',
+                                'yes'   => 'نعم',
+                            ],
+                        ],
+
+                        'default' => [
+                            'add'              => 'إضافة',
+                            'break-duration'   => 'مدة الاستراحة بين الفترات (بالدقائق)',
+                            'close'            => 'إغلاق',
+                            'description'      => 'معلومات الحجز',
+                            'description-info' => 'وفقًا للفتحات الزمنية، سيتم إنشاء المدة الزمنية وعرضها. ستكون المدة الزمنية فريدة عبر جميع الفتحات وستكون مرئية على الواجهة الأمامية.',
+                            'edit'             => 'تحرير',
+                            'many'             => 'العديد من الحجوزات ليوم واحد',
+                            'one'              => 'حجز واحد لعدة أيام',
+                            'open'             => 'فتح',
+                            'slot-add'         => 'إضافة فترات',
+                            'slot-duration'    => 'مدة الفترة (بالدقائق)',
+                            'slot-title'       => 'مدة الفترات الزمنية',
+                            'title'            => 'افتراضي',
+                            'unavailable'      => 'غير متاح',
+
+                            'modal'            => [
+                                'slot' => [
+                                    'add-title'  => 'إضافة فترات',
+                                    'close'      => 'إغلاق',
+                                    'day'        => 'اليوم',
+                                    'edit-title' => 'تحرير الفترات',
+                                    'friday'     => 'الجمعة',
+                                    'from'       => 'من',
+                                    'from-day'   => 'من اليوم',
+                                    'from-time'  => 'من الوقت',
+                                    'monday'     => 'الاثنين',
+                                    'open'       => 'فتح',
+                                    'saturday'   => 'السبت',
+                                    'save'       => 'حفظ',
+                                    'select'     => 'اختر',
+                                    'status'     => 'الحالة',
+                                    'sunday'     => 'الأحد',
+                                    'thursday'   => 'الخميس',
+                                    'to'         => 'إلى',
+                                    'to-day'     => 'إلى اليوم',
+                                    'to-time'    => 'إلى الوقت',
+                                    'tuesday'    => 'الثلاثاء',
+                                    'wednesday'  => 'الأربعاء',
+                                    'week'       => ':day',
+                                ],
+                            ],
+                        ],
+
+                        'event' => [
+                            'add'                => 'إضافة تذاكر',
+                            'delete'             => 'حذف',
+                            'description'        => 'الوصف',
+                            'description-info'   => 'لا توجد تذاكر متاحة.',
+                            'edit'               => 'تحرير',
+                            'name'               => 'الاسم',
+                            'price'              => 'السعر',
+                            'qty'                => 'الكمية',
+                            'special-price'      => 'السعر الخاص',
+                            'special-price-from' => 'السعر الخاص من',
+                            'special-price-to'   => 'السعر الخاص حتى',
+                            'title'              => 'التذاكر',
+                            'valid-from'         => 'صالح من',
+                            'valid-until'        => 'صالح حتى',
+
+                            'modal'              => [
+                                'edit' => 'تحرير التذاكر',
+                                'save' => 'حفظ',
+                            ],
+                        ],
+
+                        'empty-info' => [
+                            'tickets' => [
+                                'add' => 'إضافة تذاكر',
+                            ],
+
+                            'slots'   => [
+                                'add'         => 'إضافة فترات',
+                                'description' => 'الفترات المتاحة مع مدة الوقت.',
+                            ],
+                        ],
+
+                        'rental' => [
+                            'daily'                  => 'على أساس يومي',
+                            'daily-hourly'           => 'كلاهما (يومي وساعي)',
+                            'daily-price'            => 'السعر اليومي',
+                            'hourly'                 => 'على أساس ساعي',
+                            'hourly-price'           => 'السعر الساعي',
+                            'title'                  => 'نوع الإيجار',
+
+                            'same-slot-for-all-days' => [
+                                'no'    => 'لا',
+                                'title' => 'نفس الفترة لجميع الأيام',
+                                'yes'   => 'نعم',
+                            ],
+                        ],
+
+                        'slots' => [
+                            'add'              => 'إضافة فترات',
+                            'description-info' => 'وفقًا للفتحات الزمنية، سيتم إنشاء المدة الزمنية وعرضها. ستكون المدة الزمنية فريدة عبر جميع الفتحات وستكون مرئية على الواجهة الأمامية.',
+                            'save'             => 'حفظ',
+                            'title'            => 'مدة الفترات الزمنية',
+                            'unavailable'      => 'غير متاح',
+
+                            'action' => [
+                                'add' => 'إضافة',
+                            ],
+
+                            'modal' => [
+                                'slot' => [
+                                    'friday'     => 'الجمعة',
+                                    'from'       => 'من',
+                                    'monday'     => 'الاثنين',
+                                    'saturday'   => 'السبت',
+                                    'sunday'     => 'الأحد',
+                                    'thursday'   => 'الخميس',
+                                    'to'         => 'إلى',
+                                    'tuesday'    => 'الثلاثاء',
+                                    'wednesday'  => 'الأربعاء',
+                                ],
+                            ],
+                        ],
+
+                        'table' => [
+                            'break-duration'            => 'مدة الاستراحة بين الفترات (بالدقائق)',
+                            'guest-capacity'            => 'سعة الضيوف',
+                            'guest-limit'               => 'حد الضيوف لكل طاولة',
+                            'prevent-scheduling-before' => 'منع الجدولة قبل',
+                            'slot-duration'             => 'مدة الفترة (بالدقائق)',
+
+                            'charged-per'               => [
+                                'guest'  => 'ضيف',
+                                'table'  => 'طاولة',
+                                'title'  => 'محسوب لكل',
+                            ],
+
+                            'same-slot-for-all-days'    => [
+                                'no'    => 'لا',
+                                'title' => 'نفس الفترة لجميع الأيام',
+                                'yes'   => 'نعم',
+                            ],
+                        ],
+
+                        'type' => [
+                            'appointment' => 'حجز موعد',
+                            'default'     => 'حجز افتراضي',
+                            'event'       => 'حجز حدث',
+                            'many'        => 'العديد',
+                            'one'         => 'واحد',
+                            'rental'      => 'حجز إيجار',
+                            'table'       => 'حجز طاولة',
+                            'title'       => 'النوع',
                         ],
                     ],
 
@@ -1665,6 +1968,46 @@ return [
                     'id'     => 'المعرف',
                     'name'   => 'الاسم',
                 ],
+            ],
+        ],
+
+        'gdpr' => [
+            'index' => [
+                'title' => 'طلب GDPR',
+
+                'datagrid' => [
+                    'completed'     => 'مكتمل',
+                    'created-at'    => 'تم الإنشاء في',
+                    'customer-name' => 'اسم العميل',
+                    'declined'      => 'مرفوض',
+                    'delete'        => 'حذف',
+                    'edit'          => 'تعديل',
+                    'id'            => 'المعرف',
+                    'message'       => 'الرسالة',
+                    'pending'       => 'قيد الانتظار',
+                    'processing'    => 'قيد المعالجة',
+                    'revoked'       => 'ملغى',
+                    'status'        => 'الحالة',
+                    'type'          => 'النوع',
+                ],
+
+                'modal' => [
+                    'completed'     => 'مكتمل',
+                    'declined'      => 'مرفوض',
+                    'message'       => 'الرسالة',
+                    'pending'       => 'قيد الانتظار',
+                    'processing'    => 'قيد المعالجة',
+                    'revoked'       => 'ملغى',
+                    'save-btn'      => 'حفظ',
+                    'status'        => 'الحالة',
+                    'title'         => 'تعديل طلب بيانات GDPR',
+                    'type'          => 'النوع',
+                ],
+
+                'update-success'              => 'تم تحديث طلب البيانات بنجاح وتم إرسال البريد الإلكتروني إلى العميل.',
+                'delete-success'              => 'تم حذف طلب البيانات بنجاح.',
+                'attribute-reason-error'      => 'غير قادر على الحذف.',
+                'update-success-unsent-email' => 'تم تحديث طلب البيانات بنجاح ولكن لم يتم إرسال البريد الإلكتروني إلى العميل.',
             ],
         ],
 
@@ -3158,6 +3501,7 @@ return [
                 'new'                           => 'جديد',
                 'no'                            => 'لا',
                 'parent-id'                     => 'معرف الأصل',
+                'parent-id-hint'                => 'يمكن إدخال معرفات الأصل المتعددة باستخدام قيم مفصولة بفواصل (مثل: 12,15,34)',
                 'category-id'                   => 'معرف الفئة',
                 'preview'                       => 'معاينة',
                 'product-carousel'              => 'شريط المنتجات',
@@ -3319,6 +3663,7 @@ return [
 
         'view' => [
             'all-channels'  => 'جميع القنوات',
+            'back-btn'      => 'رجوع',
             'day'           => 'يوم',
             'end-date'      => 'تاريخ الانتهاء',
             'export-csv'    => 'تصدير كملف CSV',
@@ -3433,43 +3778,125 @@ return [
                     ],
 
                     'review-translation' => [
-                        'dolphin-phi'       => 'دولفين في',
-                        'enabled'           => 'ممكّن',
-                        'gpt-3-5-turbo'     => 'OpenAI gpt-3.5-turbo',
-                        'llama2'            => 'لاما 2',
-                        'llama2-uncensored' => 'لاما 2 غير مراقب',
-                        'llama2:13b'        => 'لاما 2 13B',
-                        'llama2:70b'        => 'لاما 2 70B',
-                        'llava'             => 'للافا',
-                        'mistral'           => 'ميسترال',
-                        'model'             => 'النموذج',
-                        'orca-mini'         => 'أوركا ميني',
-                        'phi'               => 'فاي-2',
-                        'starling-lm'       => 'ستارلينج',
-                        'title'             => 'ترجمة المراجعة',
-                        'title-info'        => 'قدم خيارًا للعميل أو الزائر لترجمة مراجعة العميل إلى اللغة الإنجليزية.<br/><br/>عند التمكين، انتقل إلى المراجعة وستجد زر "ترجمة إلى الإنجليزية" إذا كانت المراجعة بلغة أخرى غير الإنجليزية.',
-                        'vicuna'            => 'فيكونا',
+                        'deepseek-r1-8b'      => 'DeepSeek R1 (8b)',
+                        'enabled'             => 'ممكّن',
+                        'gemini-2-0-flash'    => 'Gemini 2.0 Flash',
+                        'gpt-4-turbo'         => 'OpenAI gpt-4 Turbo',
+                        'gpt-4o'              => 'OpenAI gpt-4o',
+                        'gpt-4o-mini'         => 'OpenAI gpt-4o mini',
+                        'llama-groq'          => 'Llama 3.3 (Groq)',
+                        'llama3-1-8b'         => 'Llama 3.1 (8B)',
+                        'llama3-2-1b'         => 'Llama 3.2 (1B)',
+                        'llama3-2-3b'         => 'Llama 3.2 (3B)',
+                        'llama3-8b'           => 'Llama 3 (8B)',
+                        'llava-7b'            => 'Llava (7b)',
+                        'mistral-7b'          => 'Mistral (7b)',
+                        'model'               => 'النموذج',
+                        'orca-mini'           => 'Orca Mini',
+                        'phi3-5'              => 'Phi 3.5',
+                        'qwen2-5-0-5b'        => 'Qwen 2.5 (0.5b)',
+                        'qwen2-5-1-5b'        => 'Qwen 2.5 (1.5b)',
+                        'qwen2-5-14b'         => 'Qwen 2.5 (14b)',
+                        'qwen2-5-3b'          => 'Qwen 2.5 (3b)',
+                        'qwen2-5-7b'          => 'Qwen 2.5 (7b)',
+                        'starling-lm-7b'      => 'Starling-lm (7b)',
+                        'title'               => 'ترجمة المراجعة',
+                        'title-info'          => 'توفير خيار للعميل أو الزائر لترجمة مراجعة العميل إلى الإنجليزية.<br/><br/>عند التمكين، انتقل إلى المراجعة وستجد الزر "ترجمة إلى الإنجليزية" إذا كانت المراجعة بغير الإنجليزية.',
+                        'vicuna-13b'          => 'Vicuna (13b)',
+                        'vicuna-7b'           => 'Vicuna (7b)',
                     ],
 
                     'checkout-message' => [
-                        'dolphin-phi'       => 'دولفين في',
-                        'enabled'           => 'ممكّن',
-                        'gpt-3-5-turbo'     => 'OpenAI gpt-3.5-turbo',
-                        'llama2'            => 'لاما 2',
-                        'llama2-uncensored' => 'لاما 2 غير مراقب',
-                        'llama2:13b'        => 'لاما 2 13B',
-                        'llama2:70b'        => 'لاما 2 70B',
-                        'llava'             => 'للافا',
-                        'mistral'           => 'ميسترال',
-                        'model'             => 'النموذج',
-                        'orca-mini'         => 'أوركا ميني',
-                        'phi'               => 'فاي-2',
-                        'prompt'            => 'تعليمات',
-                        'starling-lm'       => 'ستارلينج',
-                        'title'             => 'رسالة الدفع الشخصية',
-                        'title-info'        => 'قم بصياغة رسالة دفع شخصية للعملاء على صفحة "شكرًا لك"، مع تخصيص المحتوى ليتناسب مع تفضيلات الأفراد وتعزيز تجربة الشراء بشكل عام.',
-                        'vicuna'            => 'فيكونا',
+                        'deepseek-r1-8b'      => 'DeepSeek R1 (8b)',
+                        'enabled'             => 'ممكّن',
+                        'gemini-2-0-flash'    => 'Gemini 2.0 Flash',
+                        'gpt-4-turbo'         => 'OpenAI gpt 4 Turbo',
+                        'gpt-4o'              => 'OpenAI gpt-4o',
+                        'gpt-4o-mini'         => 'OpenAI gpt-4o mini',
+                        'llama-groq'          => 'Llama 3.3 (Groq)',
+                        'llama3-1-8b'         => 'Llama 3.1 (8B)',
+                        'llama3-2-1b'         => 'Llama 3.2 (1B)',
+                        'llama3-2-3b'         => 'Llama 3.2 (3B)',
+                        'llama3-8b'           => 'Llama 3 (8B)',
+                        'llava-7b'            => 'Llava (7b)',
+                        'mistral-7b'          => 'Mistral (7b)',
+                        'model'               => 'النموذج',
+                        'orca-mini'           => 'Orca Mini',
+                        'phi3-5'              => 'Phi 3.5',
+                        'prompt'              => 'المحفز',
+                        'qwen2-5-0-5b'        => 'Qwen 2.5 (0.5b)',
+                        'qwen2-5-1-5b'        => 'Qwen 2.5 (1.5b)',
+                        'qwen2-5-14b'         => 'Qwen 2.5 (14b)',
+                        'qwen2-5-3b'          => 'Qwen 2.5 (3b)',
+                        'qwen2-5-7b'          => 'Qwen 2.5 (7b)',
+                        'starling-lm-7b'      => 'Starling-lm (7b)',
+                        'title'               => 'رسالة الدفع المخصصة',
+                        'title-info'          => 'قم بإنشاء رسالة دفع مخصصة للعملاء على صفحة الشكر، وتخصيص المحتوى ليتناسب مع تفضيلات الأفراد وتعزيز تجربة ما بعد الشراء بشكل عام.',
+                        'vicuna'              => 'Vicuna',
+                        'vicuna-13b'          => 'Vicuna (13b)',
+                        'vicuna-7b'           => 'Vicuna (7b)',
                     ],
+                ],
+
+                'sitemap' => [
+                    'info'  => 'تعيين خيارات خريطة الموقع.',
+                    'title' => 'خريطة الموقع',
+
+                    'settings' => [
+                        'enabled' => 'مفعل',
+                        'info'    => 'تمكين أو تعطيل خريطة الموقع لموقعك على الويب لتحسين محركات البحث وتعزيز تجربة المستخدم.',
+                        'title'   => 'الإعدادات',
+                    ],
+
+                    'file-limits' => [
+                        'info'             => 'تعيين خيارات حدود الملف.',
+                        'max-file-size'    => 'الحد الأقصى لحجم الملف',
+                        'max-url-per-file' => 'الحد الأقصى لعدد عناوين URL لكل ملف',
+                        'title'            => 'حدود الملف',
+                    ],
+                ],
+            ],
+
+            'gdpr' => [
+                'title' => 'GDPR',
+                'info'  => 'إعدادات الامتثال لـ GDPR',
+
+                'settings' => [
+                    'title'   => 'إعدادات الامتثال لـ GDPR',
+                    'info'    => 'إدارة إعدادات الامتثال لـ GDPR، بما في ذلك اتفاقية خصوصية البيانات. تمكين أو تعطيل ميزات GDPR حسب الحاجة',
+                    'enabled' => 'تمكين GDPR',
+                ],
+
+                'agreement' => [
+                    'title'          => 'اتفاقية GDPR',
+                    'info'           => 'إدارة موافقة العملاء بموجب لوائح GDPR. تمكين متطلبات الاتفاقية لجمع البيانات ومعالجتها.',
+                    'enable'         => 'تمكين اتفاقية العميل',
+                    'checkbox-label' => 'تسمية خانة الاختيار للاتفاقية',
+                    'content'        => 'محتوى الاتفاقية',
+                ],
+
+                'cookie' => [
+                    'bottom-left'  => 'أسفل اليسار',
+                    'bottom-right' => 'أسفل اليمين',
+                    'center'       => 'الوسط',
+                    'description'  => 'الوصف',
+                    'enable'       => 'تمكين إشعار ملفات تعريف الارتباط',
+                    'identifier'   => 'معرف الكتلة الثابتة',
+                    'info'         => 'تكوين إعدادات موافقة ملفات تعريف الارتباط لإبلاغ المستخدمين بجمع البيانات وضمان الامتثال للوائح الخصوصية.',
+                    'position'     => 'موضع عرض كتلة ملفات تعريف الارتباط',
+                    'title'        => 'إعدادات إشعار ملفات تعريف الارتباط',
+                    'top-left'     => 'أعلى اليسار',
+                    'top-right'    => 'أعلى اليمين',
+                ],
+
+                'cookie-consent' => [
+                    'title'                  => 'إدارة تفضيلات ملفات تعريف الارتباط الخاصة بك',
+                    'info'                   => 'تحكم في كيفية استخدام بياناتك عن طريق تحديد إعدادات ملفات تعريف الارتباط المفضلة لديك. ضبط الأذونات لأنواع مختلفة من ملفات تعريف الارتباط.',
+                    'strictly-necessary'     => 'ضروري للغاية',
+                    'basic-interaction'      => 'التفاعلات الأساسية والوظائف',
+                    'experience-enhancement' => 'تحسينات التجربة',
+                    'measurement'            => 'القياسات',
+                    'targeting-advertising'  => 'الاستهداف والإعلانات',
                 ],
             ],
 
@@ -3568,13 +3995,14 @@ return [
                     ],
 
                     'review' => [
-                        'allow-customer-review' => 'السماح بمراجعة العملاء',
-                        'allow-guest-review'    => 'السماح بمراجعة الضيف',
-                        'display-review-count'  => 'عرض عدد المراجعة للتقييمات.',
-                        'display-star-count'    => 'عرض عدد النجوم في التقييمات.',
-                        'summary'               => 'ملخص',
-                        'title'                 => 'المراجعة',
-                        'title-info'            => 'تقييم أو تقييم شيء ما، وغالبًا ما ينطوي على آراء وتعليقات.',
+                        'allow-customer-review'   => 'السماح بمراجعة العملاء',
+                        'allow-guest-review'      => 'السماح بمراجعة الضيف',
+                        'censoring-reviewer-name' => 'إخفاء اسم المراجع',
+                        'display-review-count'    => 'عرض عدد المراجعة للتقييمات.',
+                        'display-star-count'      => 'عرض عدد النجوم في التقييمات.',
+                        'summary'                 => 'ملخص',
+                        'title'                   => 'المراجعة',
+                        'title-info'              => 'تقييم أو تقييم شيء ما، وغالبًا ما ينطوي على آراء وتعليقات.',
                     ],
 
                     'attribute' => [
@@ -3936,6 +4364,8 @@ return [
                     ],
 
                     'pdf-print-outs' => [
+                        'footer-text'      => 'نص التذييل',
+                        'footer-text-info' => 'أدخل النص الذي سيظهر في تذييل ملف PDF.',
                         'info'             => 'تكوين طباعة PDF لعرض معرف الفاتورة ومعرف الطلب في الرأس ، وتضمين شعار الفاتورة.',
                         'invoice-id-info'  => 'تكوين عرض معرف الفاتورة في رأس الفاتورة.',
                         'invoice-id-title' => 'عرض معرف الفاتورة في الرأس',
@@ -4077,6 +4507,7 @@ return [
             'sidebar' => [
                 'attribute-families'       => 'أسر السمات',
                 'attributes'               => 'السمات',
+                'booking-product'          => 'الحجوزات',
                 'campaigns'                => 'الحملات',
                 'catalog'                  => 'الكتالوج',
                 'categories'               => 'الفئات',
@@ -4093,6 +4524,7 @@ return [
                 'email-templates'          => 'قوالب البريد الإلكتروني',
                 'events'                   => 'الأحداث',
                 'exchange-rates'           => 'أسعار الصرف',
+                'gdpr-data-requests'       => 'طلبات بيانات GDPR',
                 'groups'                   => 'المجموعات',
                 'imports'                  => 'الواردات',
                 'inventory-sources'        => 'مصادر المخزون',
@@ -4284,26 +4716,37 @@ return [
             'ai-btn-tile' => 'سحر الذكاء الاصطناعي',
 
             'ai-generation' => [
-                'apply'                  => 'تقديم',
-                'generate'               => 'توليد',
-                'generated-content'      => 'المحتوى المولد',
-                'generated-content-info' => 'يمكن أن يكون محتوى الذكاء الاصطناعي مضللًا. يرجى مراجعة المحتوى المولد قبل تطبيقه.',
-                'generating'             => 'جار التوليد...',
-                'prompt'                 => 'استمارة',
-                'title'                  => 'مساعدة الذكاء الاصطناعي',
-                'model'                  => 'نموذج',
-                'gpt-3-5-turbo'          => 'OpenAI GPT-3.5 Turbo',
-                'llama2'                 => 'لاما 2',
-                'mistral'                => 'ميسترال',
-                'dolphin-phi'            => 'دولفين في',
-                'phi'                    => 'فاي-2',
-                'starling-lm'            => 'ستارلينج',
-                'llama2-uncensored'      => 'لاما 2 غير محجوب',
-                'llama2:13b'             => 'لاما 2 13B',
-                'llama2:70b'             => 'لاما 2 70B',
-                'orca-mini'              => 'أوركا ميني',
-                'vicuna'                 => 'فيكونا',
-                'llava'                  => 'LLaVA',
+                'apply'                    => 'تطبيق',
+                'deepseek-r1-8b'           => 'DeepSeek R1 (8b)',
+                'enabled'                  => 'ممكّن',
+                'gemini-2-0-flash'         => 'Gemini 2.0 Flash',
+                'generate'                 => 'إنشاء',
+                'generated-content'        => 'المحتوى المُنشأ',
+                'generated-content-info'   => 'قد يكون محتوى الذكاء الاصطناعي مضللًا. يرجى مراجعة المحتوى المُنشأ قبل تطبيقه.',
+                'generating'               => 'جاري الإنشاء...',
+                'gpt-4-turbo'              => 'OpenAI gpt-4 Turbo',
+                'gpt-4o'                   => 'OpenAI gpt-4o',
+                'gpt-4o-mini'              => 'OpenAI gpt-4o mini',
+                'llama-groq'               => 'Llama 3.3 (Groq)',
+                'llama3-1-8b'              => 'Llama 3.1 (8B)',
+                'llama3-2-1b'              => 'Llama 3.2 (1B)',
+                'llama3-2-3b'              => 'Llama 3.2 (3B)',
+                'llama3-8b'                => 'Llama 3 (8B)',
+                'llava-7b'                 => 'Llava (7b)',
+                'mistral-7b'               => 'Mistral (7b)',
+                'model'                    => 'النموذج',
+                'orca-mini'                => 'Orca Mini',
+                'phi3-5'                   => 'Phi 3.5',
+                'prompt'                   => 'المحفز',
+                'qwen2-5-0-5b'             => 'Qwen 2.5 (0.5b)',
+                'qwen2-5-1-5b'             => 'Qwen 2.5 (1.5b)',
+                'qwen2-5-14b'              => 'Qwen 2.5 (14b)',
+                'qwen2-5-3b'               => 'Qwen 2.5 (3b)',
+                'qwen2-5-7b'               => 'Qwen 2.5 (7b)',
+                'starling-lm-7b'           => 'Starling-lm (7b)',
+                'title'                    => 'مساعدة الذكاء الاصطناعي',
+                'vicuna-13b'               => 'Vicuna (13b)',
+                'vicuna-7b'                => 'Vicuna (7b)',
             ],
         ],
     ],
@@ -4315,8 +4758,8 @@ return [
         'campaigns'                => 'الحملات',
         'cancel'                   => 'إلغاء',
         'cart-rules'               => 'قواعد العربة',
-        'catalog-rules'            => 'قواعد الكتالوج',
         'catalog'                  => 'المُنتجات',
+        'catalog-rules'            => 'قواعد الكتالوج',
         'categories'               => 'التصنيفات',
         'channels'                 => 'القنوات',
         'cms'                      => 'إدارة المحتوى',
@@ -4333,6 +4776,7 @@ return [
         'email-templates'          => 'قوالب البريد الإلكتروني',
         'events'                   => 'الأحداث',
         'exchange-rates'           => 'أسعار الصرف',
+        'gdpr'                     => 'اللائحة العامة لحماية البيانات',
         'groups'                   => 'المجموعات',
         'import'                   => 'يستورد',
         'imports'                  => 'الواردات',
@@ -4434,6 +4878,28 @@ return [
                 'description' => 'تم إنشاء حساب عميل جديد بنجاح. يمكنهم الآن تسجيل الدخول باستخدام عنوان البريد الإلكتروني وبيانات اعتماد كلمة المرور الخاصة بهم. بمجرد تسجيل الدخول، سيكون لديهم إمكانية الوصول إلى خدمات متنوعة، بما في ذلك القدرة على مراجعة الطلبات السابقة وإدارة قوائم الرغبات وتحديث معلومات حساباتهم.',
                 'greeting'    => 'نرحب ترحيبًا حارًا بالعميل الجديد، :customer_name الذي قام بالتسجيل معنا للتو!',
                 'subject'     => 'تسجيل العملاء الجدد',
+            ],
+
+            'gdpr' => [
+                'new-delete-request' => 'طلب جديد لحذف البيانات',
+                'new-update-request' => 'طلب جديد لتحديث البيانات',
+
+                'new-request' => [
+                    'customer-name'  => 'اسم العميل : ',
+                    'delete-summary' => 'ملخص طلب الحذف',
+                    'message'        => 'رسالة : ',
+                    'request-status' => 'حالة الطلب : ',
+                    'request-type'   => 'نوع الطلب : ',
+                    'update-summary' => 'ملخص طلب التحديث',
+                ],
+
+                'status-update' => [
+                    'subject'        => 'تم تحديث طلب GDPR',
+                    'summary'        => 'تم تحديث حالة طلب GDPR',
+                    'request-status' => 'حالة الطلب:',
+                    'request-type'   => 'نوع الطلب:',
+                    'message'        => 'رسالة:',
+                ],
             ],
         ],
 

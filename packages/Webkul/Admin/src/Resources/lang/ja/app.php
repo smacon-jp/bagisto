@@ -190,6 +190,11 @@ return [
                 'title'                   => ':name の注文を作成',
 
                 'types' => [
+                    'simple' => [
+                        'none'         => 'なし',
+                        'total-amount' => '合計金額',
+                    ],
+
                     'configurable' => [
                         'select-options' => 'オプションを選択してください',
                     ],
@@ -205,6 +210,11 @@ return [
 
                     'downloadable' => [
                         'title' => 'リンク',
+                    ],
+
+                    'virtual' => [
+                        'none'         => 'なし',
+                        'total-amount' => '合計金額',
                     ],
                 ],
 
@@ -723,6 +733,38 @@ return [
                 ],
             ],
         ],
+
+        'booking' => [
+            'index' => [
+                'datagrid' => [
+                    'created-date' => '作成日',
+                    'from'         => '開始',
+                    'id'           => 'ID',
+                    'order-id'     => '注文ID',
+                    'qty'          => '数量',
+                    'to'           => '終了',
+                    'view'         => '表示',
+                ],
+
+                'title'    => '予約',
+            ],
+
+            'calendar' => [
+                'booking-date'     => '予約日',
+                'booking-details'  => '予約詳細',
+                'canceled'         => 'キャンセル済み',
+                'closed'           => '終了',
+                'done'             => '完了',
+                'order-id'         => '注文ID',
+                'pending'          => '保留中',
+                'price'            => '価格',
+                'status'           => 'ステータス',
+                'time-slot'        => '時間枠:',
+                'view-details'     => '詳細を見る',
+            ],
+
+            'title' => '予約商品',
+        ],
     ],
 
     'catalog' => [
@@ -858,6 +900,93 @@ return [
                 ],
 
                 'types' => [
+                    'simple' => [
+                        'customizable-options' => [
+                            'add-btn'           => 'オプションを追加',
+                            'empty-info'        => 'カスタマイズ可能なオプションをすぐに作成できます。',
+                            'empty-title'       => 'オプションを追加',
+                            'info'              => 'これにより、シンプルな製品がカスタマイズされます。',
+                            'title'             => 'カスタマイズ可能なアイテム',
+
+                            'update-create' => [
+                                'is-required'               => '必須',
+                                'max-characters'            => '最大文字数',
+                                'name'                      => 'タイトル',
+                                'no'                        => 'いいえ',
+                                'price'                     => '価格',
+                                'save-btn'                  => '保存',
+                                'supported-file-extensions' => 'サポートされているファイル拡張子',
+                                'title'                     => 'オプション',
+                                'type'                      => 'タイプ',
+                                'yes'                       => 'はい',
+                            ],
+
+                            'option' => [
+                                'add-btn'     => 'オプションを追加',
+                                'delete'      => '削除',
+                                'delete-btn'  => '削除',
+                                'edit-btn'    => '編集',
+                                'empty-info'  => 'さまざまな製品の組み合わせをすぐに作成できます。',
+                                'empty-title' => 'オプションを追加',
+
+                                'types' => [
+                                    'text' => [
+                                        'title' => 'テキスト',
+                                    ],
+
+                                    'textarea' => [
+                                        'title' => 'テキストエリア',
+                                    ],
+
+                                    'checkbox' => [
+                                        'title' => 'チェックボックス',
+                                    ],
+
+                                    'radio' => [
+                                        'title' => 'ラジオボタン',
+                                    ],
+
+                                    'select' => [
+                                        'title' => '選択',
+                                    ],
+
+                                    'multiselect' => [
+                                        'title' => 'マルチセレクト',
+                                    ],
+
+                                    'date' => [
+                                        'title' => '日付',
+                                    ],
+
+                                    'datetime' => [
+                                        'title' => '日付と時刻',
+                                    ],
+
+                                    'time' => [
+                                        'title' => '時間',
+                                    ],
+
+                                    'file' => [
+                                        'title' => 'ファイル',
+                                    ],
+                                ],
+
+                                'items' => [
+                                    'update-create' => [
+                                        'label'    => 'ラベル',
+                                        'price'    => '価格',
+                                        'save-btn' => '保存',
+                                        'title'    => 'オプション',
+                                    ],
+                                ],
+                            ],
+
+                            'validations' => [
+                                'associated-product' => 'この製品は既にコンフィギュラブル、グループ、またはバンドル製品に関連付けられています。',
+                            ],
+                        ],
+                    ],
+
                     'configurable' => [
                         'add-btn'           => 'バリエーションを追加',
                         'delete-btn'        => '削除',
@@ -985,6 +1114,180 @@ return [
                                     'title' => '選択',
                                 ],
                             ],
+                        ],
+                    ],
+
+                    'booking' => [
+                        'available-from' => '利用可能開始日',
+                        'available-to'   => '利用可能終了日',
+                        'location'       => '場所',
+                        'qty'            => '数量',
+                        'title'          => '予約タイプ',
+
+                        'available-every-week' => [
+                            'no'    => 'いいえ',
+                            'title' => '毎週利用可能',
+                            'yes'   => 'はい',
+                        ],
+
+                        'appointment' => [
+                            'break-duration' => 'スロット間の休憩時間（分）',
+                            'slot-duration'  => 'スロットの期間（分）',
+
+                            'same-slot-for-all-days' => [
+                                'no'    => 'いいえ',
+                                'title' => 'すべての日に同じスロット',
+                                'yes'   => 'はい',
+                            ],
+                        ],
+
+                        'default' => [
+                            'add'              => '追加',
+                            'break-duration'   => 'スロット間の休憩時間（分）',
+                            'close'            => '閉じる',
+                            'description'      => '予約情報',
+                            'description-info' => 'スロットに応じて時間の長さが作成され、表示されます。時間の長さはすべてのスロットで一意であり、ストアフロントに表示されます。',
+                            'edit'             => '編集',
+                            'many'             => '1日に複数の予約',
+                            'one'              => '複数日に1つの予約',
+                            'open'             => '開く',
+                            'slot-add'         => 'スロットを追加',
+                            'slot-duration'    => 'スロットの期間（分）',
+                            'slot-title'       => 'スロットの時間期間',
+                            'title'            => 'デフォルト',
+                            'unavailable'      => '利用不可',
+
+                            'modal'            => [
+                                'slot' => [
+                                    'add-title'  => 'スロットを追加',
+                                    'close'      => '閉じる',
+                                    'day'        => '日',
+                                    'edit-title' => 'スロットを編集',
+                                    'friday'     => '金曜日',
+                                    'from'       => '開始',
+                                    'from-day'   => '開始日',
+                                    'from-time'  => '開始時間',
+                                    'monday'     => '月曜日',
+                                    'open'       => '開く',
+                                    'saturday'   => '土曜日',
+                                    'save'       => '保存',
+                                    'select'     => '選択',
+                                    'status'     => 'ステータス',
+                                    'sunday'     => '日曜日',
+                                    'thursday'   => '木曜日',
+                                    'to'         => '終了',
+                                    'to-day'     => '終了日',
+                                    'to-time'    => '終了時間',
+                                    'tuesday'    => '火曜日',
+                                    'wednesday'  => '水曜日',
+                                    'week'       => ':day',
+                                ],
+                            ],
+                        ],
+
+                        'event' => [
+                            'add'                => 'チケットを追加',
+                            'delete'             => '削除',
+                            'description'        => '説明',
+                            'description-info'   => 'チケットは利用できません。',
+                            'edit'               => '編集',
+                            'name'               => '名前',
+                            'price'              => '価格',
+                            'qty'                => '数量',
+                            'special-price'      => '特別価格',
+                            'special-price-from' => '特別価格開始日',
+                            'special-price-to'   => '特別価格終了日',
+                            'title'              => 'チケット',
+                            'valid-from'         => '有効開始日',
+                            'valid-until'        => '有効終了日',
+
+                            'modal'              => [
+                                'edit' => 'チケットを編集',
+                                'save' => '保存',
+                            ],
+                        ],
+
+                        'empty-info' => [
+                            'tickets' => [
+                                'add' => 'チケットを追加',
+                            ],
+
+                            'slots'   => [
+                                'add'         => 'スロットを追加',
+                                'description' => '利用可能なスロットと時間の期間。',
+                            ],
+                        ],
+
+                        'rental' => [
+                            'daily'        => '日単位',
+                            'daily-hourly' => '日単位と時間単位の両方',
+                            'daily-price'  => '日単位の価格',
+                            'hourly'       => '時間単位',
+                            'hourly-price' => '時間単位の価格',
+                            'title'        => 'レンタルタイプ',
+
+                            'same-slot-for-all-days' => [
+                                'no'    => 'いいえ',
+                                'title' => 'すべての日に同じスロット',
+                                'yes'   => 'はい',
+                            ],
+                        ],
+
+                        'slots' => [
+                            'add'              => 'スロットを追加',
+                            'description-info' => 'スロットに応じて時間の長さが作成され、表示されます。時間の長さはすべてのスロットで一意であり、ストアフロントに表示されます。',
+                            'save'             => '保存',
+                            'title'            => 'スロットの時間期間',
+                            'unavailable'      => '利用不可',
+
+                            'action'           => [
+                                'add' => '追加',
+                            ],
+
+                            'modal'            => [
+                                'slot' => [
+                                    'friday'     => '金曜日',
+                                    'from'       => '開始',
+                                    'monday'     => '月曜日',
+                                    'saturday'   => '土曜日',
+                                    'sunday'     => '日曜日',
+                                    'thursday'   => '木曜日',
+                                    'to'         => '終了',
+                                    'tuesday'    => '火曜日',
+                                    'wednesday'  => '水曜日',
+                                ],
+                            ],
+                        ],
+
+                        'table' => [
+                            'break-duration'            => 'スロット間の休憩時間（分）',
+                            'guest-capacity'            => 'ゲスト収容人数',
+                            'guest-limit'               => 'テーブルごとのゲスト制限',
+                            'prevent-scheduling-before' => 'スケジュールを防ぐ',
+                            'slot-duration'             => 'スロットの期間（分）',
+
+                            'charged-per'               => [
+                                'guest'  => 'ゲスト',
+                                'table'  => 'テーブル',
+                                'title'  => '課金単位',
+                            ],
+
+                            'same-slot-for-all-days'    => [
+                                'no'    => 'いいえ',
+                                'title' => 'すべての日に同じスロット',
+                                'yes'   => 'はい',
+                            ],
+                        ],
+
+                        'type' => [
+                            'appointment' => '予約',
+                            'default'     => 'デフォルト予約',
+                            'event'       => 'イベント予約',
+                            'many'        => '複数',
+                            'one'         => '1つ',
+                            'rental'      => 'レンタル予約',
+                            'table'       => 'テーブル予約',
+                            'title'       => 'タイプ',
                         ],
                     ],
 
@@ -1665,6 +1968,46 @@ return [
                     'id'     => 'ID',
                     'name'   => '名前',
                 ],
+            ],
+        ],
+
+        'gdpr' => [
+            'index' => [
+                'title' => 'GDPRリクエスト',
+
+                'datagrid' => [
+                    'completed'     => '完了',
+                    'created-at'    => '作成日時',
+                    'customer-name' => '顧客名',
+                    'declined'      => '拒否',
+                    'delete'        => '削除',
+                    'edit'          => '編集',
+                    'id'            => 'ID',
+                    'message'       => 'メッセージ',
+                    'pending'       => '保留中',
+                    'processing'    => '処理中',
+                    'revoked'       => '取消された',
+                    'status'        => 'ステータス',
+                    'type'          => 'タイプ',
+                ],
+
+                'modal' => [
+                    'completed'     => '完了',
+                    'declined'      => '拒否',
+                    'message'       => 'メッセージ',
+                    'pending'       => '保留中',
+                    'processing'    => '処理中',
+                    'revoked'       => '取消された',
+                    'save-btn'      => '保存',
+                    'status'        => 'ステータス',
+                    'title'         => 'GDPRデータリクエストを編集',
+                    'type'          => 'タイプ',
+                ],
+
+                'update-success'              => 'データリクエストが正常に更新され、顧客にメールが送信されました。',
+                'delete-success'              => 'データリクエストが正常に削除されました。',
+                'attribute-reason-error'      => '削除できません。',
+                'update-success-unsent-email' => 'データリクエストが正常に更新されましたが、顧客にメールが送信されませんでした。',
             ],
         ],
 
@@ -3158,6 +3501,7 @@ return [
                 'new'                           => '新しい',
                 'no'                            => 'いいえ',
                 'parent-id'                     => '親ID',
+                'parent-id-hint'                => '複数の親IDをカンマ区切りの値として入力できます（例：12,15,34）',
                 'category-id'                   => 'カテゴリID',
                 'preview'                       => 'プレビュー',
                 'product-carousel'              => '商品カルーセル',
@@ -3319,6 +3663,7 @@ return [
 
         'view' => [
             'all-channels'  => 'すべてのチャンネル',
+            'back-btn'      => '戻る',
             'day'           => '日',
             'end-date'      => '終了日',
             'export-csv'    => 'CSVエクスポート',
@@ -3433,43 +3778,125 @@ return [
                     ],
 
                     'review-translation' => [
-                        'dolphin-phi'       => 'ドルフィンファイ',
-                        'enabled'           => '有効',
-                        'gpt-3-5-turbo'     => 'OpenAI gpt-3.5-turbo',
-                        'llama2'            => 'Llama 2',
-                        'llama2-uncensored' => 'Llama 2 Uncensored',
-                        'llama2:13b'        => 'Llama 2 13B',
-                        'llama2:70b'        => 'Llama 2 70B',
-                        'llava'             => 'LLaVA',
-                        'mistral'           => 'ミストラル',
-                        'model'             => 'モデル',
-                        'orca-mini'         => 'オルカミニ',
-                        'phi'               => 'Phi-2',
-                        'starling-lm'       => 'スターリング',
-                        'title'             => 'レビュー翻訳',
-                        'title-info'        => '顧客または訪問者に英語に翻訳するオプションを提供します。<br/><br/>有効にすると、レビューに移動すると、「英語に翻訳」ボタンが表示されます。',
-                        'vicuna'            => 'ビクーニャ',
+                        'deepseek-r1-8b'      => 'DeepSeek R1 (8b)',
+                        'enabled'             => '有効',
+                        'gemini-2-0-flash'    => 'Gemini 2.0 Flash',
+                        'gpt-4-turbo'         => 'OpenAI gpt-4 Turbo',
+                        'gpt-4o'              => 'OpenAI gpt-4o',
+                        'gpt-4o-mini'         => 'OpenAI gpt-4o mini',
+                        'llama-groq'          => 'Llama 3.3 (Groq)',
+                        'llama3-1-8b'         => 'Llama 3.1 (8B)',
+                        'llama3-2-1b'         => 'Llama 3.2 (1B)',
+                        'llama3-2-3b'         => 'Llama 3.2 (3B)',
+                        'llama3-8b'           => 'Llama 3 (8B)',
+                        'llava-7b'            => 'Llava (7b)',
+                        'mistral-7b'          => 'Mistral (7b)',
+                        'model'               => 'モデル',
+                        'orca-mini'           => 'Orca Mini',
+                        'phi3-5'              => 'Phi 3.5',
+                        'qwen2-5-0-5b'        => 'Qwen 2.5 (0.5b)',
+                        'qwen2-5-1-5b'        => 'Qwen 2.5 (1.5b)',
+                        'qwen2-5-14b'         => 'Qwen 2.5 (14b)',
+                        'qwen2-5-3b'          => 'Qwen 2.5 (3b)',
+                        'qwen2-5-7b'          => 'Qwen 2.5 (7b)',
+                        'starling-lm-7b'      => 'Starling-lm (7b)',
+                        'title'               => 'レビュー翻訳',
+                        'title-info'          => '顧客または訪問者に、顧客レビューを英語に翻訳するオプションを提供します。<br/><br/>有効にすると、レビューに移動し、英語以外のレビューの場合、「英語に翻訳」ボタンが表示されます。',
+                        'vicuna-13b'          => 'Vicuna (13b)',
+                        'vicuna-7b'           => 'Vicuna (7b)',
                     ],
 
                     'checkout-message' => [
-                        'dolphin-phi'       => 'ドルフィンファイ',
-                        'enabled'           => '有効',
-                        'gpt-3-5-turbo'     => 'OpenAI gpt-3.5-turbo',
-                        'llama2'            => 'Llama 2',
-                        'llama2-uncensored' => 'Llama 2 Uncensored',
-                        'llama2:13b'        => 'Llama 2 13B',
-                        'llama2:70b'        => 'Llama 2 70B',
-                        'llava'             => 'LLaVA',
-                        'mistral'           => 'ミストラル',
-                        'model'             => 'モデル',
-                        'orca-mini'         => 'オルカミニ',
-                        'phi'               => 'Phi-2',
-                        'prompt'            => 'プロンプト',
-                        'starling-lm'       => 'スターリング',
-                        'title'             => 'パーソナライズされたチェックアウトメッセージ',
-                        'title-info'        => '個別の好みに合わせてコンテンツを調整し、全体的な購入後の体験を向上させるために、お客様向けのパーソナライズされたチェックアウトメッセージを作成します。',
-                        'vicuna'            => 'ビクーニャ',
+                        'deepseek-r1-8b'      => 'DeepSeek R1 (8b)',
+                        'enabled'             => '有効',
+                        'gemini-2-0-flash'    => 'Gemini 2.0 Flash',
+                        'gpt-4-turbo'         => 'OpenAI gpt 4 Turbo',
+                        'gpt-4o'              => 'OpenAI gpt-4o',
+                        'gpt-4o-mini'         => 'OpenAI gpt-4o mini',
+                        'llama-groq'          => 'Llama 3.3 (Groq)',
+                        'llama3-1-8b'         => 'Llama 3.1 (8B)',
+                        'llama3-2-1b'         => 'Llama 3.2 (1B)',
+                        'llama3-2-3b'         => 'Llama 3.2 (3B)',
+                        'llama3-8b'           => 'Llama 3 (8B)',
+                        'llava-7b'            => 'Llava (7b)',
+                        'mistral-7b'          => 'Mistral (7b)',
+                        'model'               => 'モデル',
+                        'orca-mini'           => 'Orca Mini',
+                        'phi3-5'              => 'Phi 3.5',
+                        'prompt'              => 'プロンプト',
+                        'qwen2-5-0-5b'        => 'Qwen 2.5 (0.5b)',
+                        'qwen2-5-1-5b'        => 'Qwen 2.5 (1.5b)',
+                        'qwen2-5-14b'         => 'Qwen 2.5 (14b)',
+                        'qwen2-5-3b'          => 'Qwen 2.5 (3b)',
+                        'qwen2-5-7b'          => 'Qwen 2.5 (7b)',
+                        'starling-lm-7b'      => 'Starling-lm (7b)',
+                        'title'               => 'パーソナライズされたチェックアウトメッセージ',
+                        'title-info'          => 'Thank-Youページで顧客にパーソナライズされたチェックアウトメッセージを作成し、個々の好みに合わせたコンテンツを提供することで、購入後の体験を向上させます。',
+                        'vicuna'              => 'Vicuna',
+                        'vicuna-13b'          => 'Vicuna (13b)',
+                        'vicuna-7b'           => 'Vicuna (7b)',
                     ],
+                ],
+
+                'sitemap' => [
+                    'info'  => 'サイトマップのオプションを設定します。',
+                    'title' => 'サイトマップ',
+
+                    'settings' => [
+                        'enabled' => '有効',
+                        'info'    => 'サイトマップを有効または無効にして、検索エンジン最適化を改善し、ユーザーエクスペリエンスを向上させます。',
+                        'title'   => '設定',
+                    ],
+
+                    'file-limits' => [
+                        'info'             => 'ファイル制限オプションを設定します。',
+                        'max-file-size'    => '最大ファイルサイズ',
+                        'max-url-per-file' => 'ファイルあたりの最大URL数',
+                        'title'            => 'ファイル制限',
+                    ],
+                ],
+            ],
+
+            'gdpr' => [
+                'title' => 'GDPR',
+                'info'  => 'GDPRコンプライアンス設定',
+
+                'settings' => [
+                    'title'   => 'GDPRコンプライアンス設定',
+                    'info'    => 'プライバシーポリシーを含むGDPRコンプライアンス設定を管理します。必要に応じてGDPR機能を有効または無効にします。',
+                    'enabled' => 'GDPRを有効にする',
+                ],
+
+                'agreement' => [
+                    'title'          => 'GDPR同意',
+                    'info'           => 'GDPR規制に準拠して顧客の同意を管理します。データの収集と処理のために必須の同意を有効にします。',
+                    'enable'         => '顧客の同意を有効にする',
+                    'checkbox-label' => '同意のチェックボックスラベル',
+                    'content'        => '同意の内容',
+                ],
+
+                'cookie' => [
+                    'bottom-left'  => '左下',
+                    'bottom-right' => '右下',
+                    'center'       => '中央',
+                    'description'  => '説明',
+                    'enable'       => 'クッキー通知を有効にする',
+                    'identifier'   => '静的ブロック識別子',
+                    'info'         => 'データ収集についてユーザーに通知し、プライバシーポリシーを遵守するためのクッキー同意設定を行います。',
+                    'position'     => 'クッキーブロックの表示位置',
+                    'title'        => 'クッキー通知設定',
+                    'top-left'     => '左上',
+                    'top-right'    => '右上',
+                ],
+
+                'cookie-consent' => [
+                    'title'                  => 'クッキー設定を管理する',
+                    'info'                   => '希望するクッキー設定を選択してデータの使用を制御します。さまざまな種類のクッキーに対する許可を設定します。',
+                    'strictly-necessary'     => '厳密に必要',
+                    'basic-interaction'      => '基本的な相互作用と機能',
+                    'experience-enhancement' => '体験の向上',
+                    'measurement'            => '測定',
+                    'targeting-advertising'  => 'ターゲティングと広告',
                 ],
             ],
 
@@ -3568,13 +3995,14 @@ return [
                     ],
 
                     'review' => [
-                        'allow-customer-review' => '顧客レビューを許可する',
-                        'allow-guest-review'    => 'ゲストレビューを許可する',
-                        'display-review-count'  => '評価のレビュー数を表示します。',
-                        'display-star-count'    => '評価に星の数を表示します。',
-                        'summary'               => 'まとめ',
-                        'title'                 => 'レビュー',
-                        'title-info'            => '何かを評価または評価することで、しばしば意見やフィードバックが含まれます。',
+                        'allow-customer-review'   => '顧客レビューを許可する',
+                        'allow-guest-review'      => 'ゲストレビューを許可する',
+                        'censoring-reviewer-name' => 'レビュアー名の検閲',
+                        'display-review-count'    => '評価のレビュー数を表示します。',
+                        'display-star-count'      => '評価に星の数を表示します。',
+                        'summary'                 => 'まとめ',
+                        'title'                   => 'レビュー',
+                        'title-info'              => '何かを評価または評価することで、しばしば意見やフィードバックが含まれます。',
                     ],
 
                     'attribute' => [
@@ -3936,6 +4364,8 @@ return [
                     ],
 
                     'pdf-print-outs' => [
+                        'footer-text'      => 'フッターテキスト',
+                        'footer-text-info' => 'PDFのフッターに表示されるテキストを入力してください。',
                         'info'             => 'PDF印刷アウトを設定して、ヘッダーに請求書ID、注文IDを表示し、請求書のロゴを含めます。',
                         'invoice-id-info'  => '請求書ヘッダーに請求書IDを表示するように設定します。',
                         'invoice-id-title' => 'ヘッダーに請求書IDを表示',
@@ -4077,6 +4507,7 @@ return [
             'sidebar' => [
                 'attribute-families'       => '属性ファミリー',
                 'attributes'               => '属性',
+                'booking-product'          => '予約',
                 'campaigns'                => 'キャンペーン',
                 'catalog'                  => 'カタログ',
                 'categories'               => 'カテゴリ',
@@ -4088,11 +4519,12 @@ return [
                 'currencies'               => '通貨',
                 'customers'                => '顧客',
                 'dashboard'                => 'ダッシュボード',
-                'data-transfer'            => 'Data Transfer',
+                'data-transfer'            => 'データ転送',
                 'discount'                 => '割引',
                 'email-templates'          => 'メールテンプレート',
                 'events'                   => 'イベント',
                 'exchange-rates'           => '為替レート',
+                'gdpr-data-requests'       => 'GDPRデータリクエスト',
                 'groups'                   => 'グループ',
                 'imports'                  => '輸入品',
                 'inventory-sources'        => '在庫ソース',
@@ -4284,26 +4716,37 @@ return [
             'ai-btn-tile' => 'マジックAI',
 
             'ai-generation' => [
-                'apply'                  => '適用',
-                'dolphin-phi'            => 'Dolphin Phi',
-                'generate'               => '生成',
-                'generated-content'      => '生成されたコンテンツ',
-                'generated-content-info' => 'AIによるコンテンツは誤解を招く可能性があります。適用する前に生成されたコンテンツを確認してください。',
-                'generating'             => '生成中...',
-                'gpt-3-5-turbo'          => 'OpenAI GPT-3.5 Turbo',
-                'llama2'                 => 'Llama 2',
-                'llama2-uncensored'      => 'Llama 2 センシャードなし',
-                'llama2:13b'             => 'Llama 2 13B',
-                'llama2:70b'             => 'Llama 2 70B',
-                'llava'                  => 'LLaVA',
-                'mistral'                => 'Mistral',
-                'model'                  => 'モデル',
-                'orca-mini'              => 'Orca Mini',
-                'phi'                    => 'Phi-2',
-                'prompt'                 => 'プロンプト',
-                'starling-lm'            => 'Starling',
-                'title'                  => 'AIアシスタンス',
-                'vicuna'                 => 'Vicuna',
+                'apply'                    => '適用',
+                'deepseek-r1-8b'           => 'DeepSeek R1 (8b)',
+                'enabled'                  => '有効',
+                'gemini-2-0-flash'         => 'Gemini 2.0 Flash',
+                'generate'                 => '生成',
+                'generated-content'        => '生成されたコンテンツ',
+                'generated-content-info'   => 'AIによって生成されたコンテンツは誤解を招く可能性があります。適用する前に生成されたコンテンツを確認してください。',
+                'generating'               => '生成中...',
+                'gpt-4-turbo'              => 'OpenAI gpt-4 Turbo',
+                'gpt-4o'                   => 'OpenAI gpt-4o',
+                'gpt-4o-mini'              => 'OpenAI gpt-4o mini',
+                'llama-groq'               => 'Llama 3.3 (Groq)',
+                'llama3-1-8b'              => 'Llama 3.1 (8B)',
+                'llama3-2-1b'              => 'Llama 3.2 (1B)',
+                'llama3-2-3b'              => 'Llama 3.2 (3B)',
+                'llama3-8b'                => 'Llama 3 (8B)',
+                'llava-7b'                 => 'Llava (7b)',
+                'mistral-7b'               => 'Mistral (7b)',
+                'model'                    => 'モデル',
+                'orca-mini'                => 'Orca Mini',
+                'phi3-5'                   => 'Phi 3.5',
+                'prompt'                   => 'プロンプト',
+                'qwen2-5-0-5b'             => 'Qwen 2.5 (0.5b)',
+                'qwen2-5-1-5b'             => 'Qwen 2.5 (1.5b)',
+                'qwen2-5-14b'              => 'Qwen 2.5 (14b)',
+                'qwen2-5-3b'               => 'Qwen 2.5 (3b)',
+                'qwen2-5-7b'               => 'Qwen 2.5 (7b)',
+                'starling-lm-7b'           => 'Starling-lm (7b)',
+                'title'                    => 'AIアシスタント',
+                'vicuna-13b'               => 'Vicuna (13b)',
+                'vicuna-7b'                => 'Vicuna (7b)',
             ],
         ],
     ],
@@ -4333,6 +4776,7 @@ return [
         'email-templates'          => 'Eメールテンプレート',
         'events'                   => 'イベント',
         'exchange-rates'           => '為替レート',
+        'gdpr'                     => 'GDPR',
         'groups'                   => 'グループ',
         'import'                   => '輸入',
         'imports'                  => '輸入品',
@@ -4434,6 +4878,28 @@ return [
                 'description' => '新しい顧客アカウントが正常に作成されました。 これで、電子メール アドレスとパスワードの資格情報を使用してログインできるようになります。 ログインすると、過去の注文の確認、ウィッシュリストの管理、アカウント情報の更新など、さまざまなサービスにアクセスできるようになります。',
                 'greeting'    => '私たちに登録したばかりの新しい顧客、:customer_name を温かく歓迎します。',
                 'subject'     => '新規顧客登録',
+            ],
+
+            'gdpr' => [
+                'new-delete-request' => 'データ削除の新規リクエスト',
+                'new-update-request' => 'データ更新の新規リクエスト',
+
+                'new-request' => [
+                    'customer-name'  => '顧客名 : ',
+                    'delete-summary' => '削除リクエストの概要',
+                    'message'        => 'メッセージ : ',
+                    'request-status' => 'リクエスト状況 : ',
+                    'request-type'   => 'リクエストタイプ : ',
+                    'update-summary' => '更新リクエストの概要',
+                ],
+
+                'status-update' => [
+                    'subject'        => 'GDPRリクエストが更新されました',
+                    'summary'        => 'GDPRリクエストの状況が更新されました',
+                    'request-status' => 'リクエスト状況:',
+                    'request-type'   => 'リクエストタイプ:',
+                    'message'        => 'メッセージ:',
+                ],
             ],
         ],
 
